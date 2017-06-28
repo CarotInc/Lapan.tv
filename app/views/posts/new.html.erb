@@ -1,0 +1,13 @@
+<div class="contents row" id="form">
+<%= form_tag('/', :method => :post) do %>
+    <h3>
+      投稿する
+    </h3>
+    <input placeholder="Nickname" type="string" name="title">
+    <input placeholder="Image Url" type="text" name="image">
+    <input placeholder="Image Url" type="text" name="video">
+    <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
+    <textarea cols="30" name="contents" placeholder="text" rows="10"></textarea>
+    <input type="submit" value="SENT">
+  <% end %>
+</div>

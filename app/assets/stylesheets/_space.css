@@ -1,0 +1,44 @@
+/* margin*/
+
+.u-mt-100 {
+  margin-top: 100px;
+}
+
+.u-mt-40 {
+  margin-top: 40px;
+}
+
+.u-mb-20 {
+  margin-bottom: 20px;
+}
+
+.u-mb-50 {
+  margin-bottom: 50px;
+}
+.u-mt-50 {
+  margin-top: 50px;
+}
+
+.u-ml-40 {
+  margin-left: 40px;
+}
+
+/* padding */
+.u-pt-20 {
+  padding-top: 20px;
+}
+.u-pt-40 {
+  padding-top: 40px;
+}
+
+.u-pt-100 {
+  padding-top: 100px;
+}
+
+.u-pb-50 {
+  padding-bottom: 50px;
+}
+
+.u-pl-40 {
+  padding-left: 40px;
+}

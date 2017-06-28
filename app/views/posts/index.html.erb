@@ -1,0 +1,19 @@
+<div id="content" class="pure-g">
+  <div id="mainContent" class="pure-u-2-3">
+    <div>
+      <p class="mainBorder">新着DIY</p>
+      <div class="make_border_2"></div>
+      <%= render :partial => "diy" , :collection => @posts %>
+      <div>
+        <%= paginate(@posts) %>
+      </div>
+    </div>
+  </div>
+  <div id="subContent" class="pure-u-1-3">
+    <div>
+      <p class="subBorder">カテゴリー</p>
+      <div class="make_border_2"></div>
+    </div>
+  </div>
+</div>
+
