@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: DIY_production
-  username: DIY
-  password: <%= ENV['DIY_DATABASE_PASSWORD'] %>
+  username: root
+  password: 
