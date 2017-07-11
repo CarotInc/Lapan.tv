@@ -1,0 +1,16 @@
+<div><h1>検索結果</h1>
+<div>
+  <% @result.each do |result| %>
+  <%= link_to "/#{result.id}/fashion/diy" do %>
+<span class="pure-u-1-4 child">
+  <div class = "squareImage">
+
+  </div>
+  <div class = "titleText">
+    <%= result.title  %>
+  </div>
+  </span>
+  <%end%>
+  <% end %>
+</div>
+  </div>

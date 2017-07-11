@@ -129,3 +129,103 @@ footer {
   box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
   margin:28px;
 }
+
+#modal-open {
+  width: 300px;
+  height: 40px;
+  display: table-cell;
+  color: orange;
+  border: inset 2px orange;
+  text-align: center;
+  vertical-align:middle;
+  font-size: 20px;
+  margin-top: 5px;
+  background-color: white;
+}
+
+#modal-open:hover {
+  color: #FAAC58;
+  background-color: #eaeaea;
+}
+
+/* モーダル コンテンツエリア */
+#modal-main {
+  display: none;
+  width: 500px;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #666666;
+  position:fixed;
+  z-index: 2;
+  text-align: center;
+}
+/* モーダル 背景エリア */
+#modal-bg {
+  display:none;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.5);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+.video-wrap {
+    position: relative;
+}
+.video-btn {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:40px; /*コントローラー分下部に余白を*/
+    cursor: pointer;
+}
+#video_wrapper #seekbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background: url(../images/bg_seekbar.png) repeat-x 0 26px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+#video_wrapper #seekbar #currenttime {
+  width: 0;
+  height: 85px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  background: url(../images/bg_currenttime.png) repeat-x 0 26px;
+}
+#video_wrapper #chapter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  z-index: 3;
+}
+#video_wrapper #chapter li {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  margin-left: -8px;
+}
+#video_wrapper #chapter li .caption {
+  font-size: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 17px;
+  padding-left: 15px;
+  color: white;
+  font-weight: 300;
+}
+#video_wrapper #chapter li span {
+  display: block;
+  width: 17px;
+  height: 17px;
+  background: url(../images/point.png) no-repeat 0 0;
+  cursor: pointer;
+}

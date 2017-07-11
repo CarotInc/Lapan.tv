@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   end
 
   def new
-    @posts = Diy.new
+    @diy = Diy.new
+    @q = Diy.ransack(params[:q])
+    @people = @q.result(distinct: true)
   end
 
   def create
@@ -16,11 +18,23 @@ class PostsController < ApplicationController
 
   def show
     @posts = Diy.find(id_params[:id])
+    @q = Diy.ransack(params[:q])
+    @result = @q.result(distinct: true)
+  end
+
+  def search
+    @q = Diy.search(search_params)
+    @result = @q.result(distinct: true)
   end
 
    private
   def diy_params
-    params.permit(:title, :image, :text, :video, :contents)
+    params.require(:diy).permit(:title, :image, :text, :video, :contents, :tag_list)
+  end
+
+    private
+  def search_params
+    params.require(:q).permit(:title_cont)
   end
 
   def id_params

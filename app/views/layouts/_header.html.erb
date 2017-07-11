@@ -2,15 +2,11 @@
     <div class="header">
       <div class = "header-logo" id="toggle"><a href="/" class="header-logo">Lapan.tv</a></div>
       <nav class="form">
-        <%= form_tag('/products/search', method: :get) do %>
-                <input class="search__query" name="keyword" placeholder="動画を検索" type="text" value="">
-                <button class="btn-search" title="検索" type="submit">
-                <i class="icon-search"></i>
-                </button>
-                </input>
-              <% end %>
-              <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
-              </form>
+        <%= search_form_for(@q, url: '/search/product', method: :get) do |f| %>
+          <%= f.label :title_cont %>
+          <%= f.search_field :title_cont %>
+          <%= f.submit %>
+        <% end %>
       </nav>
     </div>
   </header><!-- /header -->
