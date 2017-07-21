@@ -1,0 +1,10 @@
+<%= link_to "/#{posts.map { |post| post.id}.join(" ") }/fashion/diy" do %>
+<span class="pure-u-1-4 child">
+  <div class = "squareImage">
+    <img src=<%= posts.map { |post| post.image}.join(" ") %> alt="" class = "image">
+  </div>
+  <div class = "titleText">
+    <%= posts.map { |post| post.title}.join(" ") %>
+  </div>
+  </span>
+  <%end%>

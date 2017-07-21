@@ -7,14 +7,26 @@
       <div>
         <%= paginate(@posts) %>
       </div>
-
     </div>
   </div>
   <div id="subContent" class="pure-u-1-3">
     <div>
       <p class="subBorder">カテゴリー</p>
       <div class="make_border_2"></div>
+      <div>
+        <% @tags.each do |tag| %>
+        <%= link_to tag.name, { :action => :tag, :name => tag.name}%>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <p class="subBorder">エリア</p>
+      <div class="make_border_2"></div>
+      <div>
+        
+      </div>
     </div>
   </div>
 </div>
+
 

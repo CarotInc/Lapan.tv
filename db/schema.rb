@@ -16,8 +16,38 @@ ActiveRecord::Schema.define(version: 20170707024653) do
     t.string   "title"
     t.text     "text",       limit: 65535
     t.binary   "image",      limit: 65535
-    t.binary   "video",      limit: 65535
-    t.text     "contents",   limit: 65535
+    t.text     "video",      limit: 65535
+    t.text     "title1",     limit: 65535
+    t.text     "contents1",  limit: 65535
+    t.binary   "image1",     limit: 65535
+    t.text     "title2",     limit: 65535
+    t.text     "contents2",  limit: 65535
+    t.binary   "image2",     limit: 65535
+    t.text     "title3",     limit: 65535
+    t.text     "contents3",  limit: 65535
+    t.binary   "image3",     limit: 65535
+    t.text     "title4",     limit: 65535
+    t.text     "contents4",  limit: 65535
+    t.binary   "image4",     limit: 65535
+    t.text     "prefecture", limit: 65535
+    t.text     "area",       limit: 65535
+    t.text     "address",    limit: 65535
+    t.text     "name",       limit: 65535
+    t.text     "station",    limit: 65535
+    t.text     "call",       limit: 65535
+    t.text     "access",     limit: 65535
+    t.text     "open",       limit: 65535
+    t.text     "close",      limit: 65535
+    t.text     "url",        limit: 65535
+    t.text     "price",      limit: 65535
+    t.text     "seat",       limit: 65535
+    t.text     "private",    limit: 65535
+    t.text     "tatami",     limit: 65535
+    t.text     "smoke",      limit: 65535
+    t.text     "parking",    limit: 65535
+    t.text     "reserve",    limit: 65535
+    t.text     "card",       limit: 65535
+    t.text     "plus",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

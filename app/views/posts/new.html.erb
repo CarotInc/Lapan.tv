@@ -1,29 +1,149 @@
 <div class="contents row" id="form">
 <%= form_for(@diy, :url => {:controller => :posts,:action => :create }) do |f| %>
   <div class="field">
-    <%= f.label :title, "title" %><br>
+    <%= f.label :title, "題名" %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :text, "subtitle" %><br>
+    <%= f.label :text, "説明文" %><br>
     <%= f.text_field :text %>
   </div>
   <div class="field">
-    <%= f.label :iamge, "image" %><br>
-    <%= f.text_field :image %>
+    <%= f.label :iamge, "サムネイル" %><br>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
-    <%= f.label :contents, "contents" %><br>
-    <%= f.text_field :contents %>
-  </div>
-  <div class="field">
-    <%= f.label :tag_list, "スキル・特技（カンマ区切り）" %><br>
+    <%= f.label :tag_list, "カテゴリー（カンマ区切り）" %><br>
     <%= text_field_tag 'diy[tag_list]', @diy.tag_list.join(","), class: "form-control" %>
   </div>
   <div class="field">
-  <%= f.label :video %><br>
-  <%= f.file_field :video %>
-</div>
+    <%= f.label :video, "インスタのURL" %><br>
+    <%= f.text_field :video %>
+  </div>
+  <div class="field">
+    <%= f.label :title1, "見出し１" %><br>
+    <%= f.text_field :title1 %>
+  </div>
+  <div class="field">
+    <%= f.label :iamge1, "画像１" %><br>
+    <%= f.file_field :image1 %>
+  </div>
+  <div class="field">
+    <%= f.label :contents1, "文章１" %><br>
+    <%= f.text_field :contents1 %>
+  </div>
+  <div class="field">
+    <%= f.label :title2, "見出し２" %><br>
+    <%= f.text_field :title2 %>
+  </div>
+  <div class="field">
+    <%= f.label :iamge2, "画像２" %><br>
+    <%= f.file_field :image2 %>
+  </div>
+  <div class="field">
+    <%= f.label :contents2, "文章２" %><br>
+    <%= f.text_field :contents2 %>
+  </div>
+  <div class="field">
+    <%= f.label :title3, "見出し３" %><br>
+    <%= f.text_field :title3 %>
+  </div>
+  <div class="field">
+    <%= f.label :iamge3, "画像３" %><br>
+    <%= f.file_field :image3 %>
+  </div>
+  <div class="field">
+    <%= f.label :contents3, "文章３" %><br>
+    <%= f.text_field :contents3 %>
+  </div>
+  <div class="field">
+    <%= f.label :title4, "見出し４" %><br>
+    <%= f.text_field :title4 %>
+  </div>
+  <div class="field">
+    <%= f.label :iamge4, "画像４" %><br>
+    <%= f.file_field :image4 %>
+  </div>
+  <div class="field">
+    <%= f.label :contents4, "文章４" %><br>
+    <%= f.text_field :contents4 %>
+  </div>
+  <div class="field">
+    <%= f.label :prefacture, "文章４" %><br>
+    <%= f.text_field :prefacture %>
+  </div>
+  <div class="field">
+    <%= f.label :area, "文章４" %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :address, "文章４" %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :name, "文章４" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :station, "文章４" %><br>
+    <%= f.text_field :station %>
+  </div>
+  <div class="field">
+    <%= f.label :call, "文章４" %><br>
+    <%= f.text_field :call %>
+  </div>
+  <div class="field">
+    <%= f.label :access, "文章４" %><br>
+    <%= f.text_field :access %>
+  </div>
+  <div class="field">
+    <%= f.label :open, "文章４" %><br>
+    <%= f.text_field :open %>
+  </div>
+  <div class="field">
+    <%= f.label :close, "文章４" %><br>
+    <%= f.text_field :close %>
+  </div>
+  <div class="field">
+    <%= f.label :url, "文章４" %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :price, "文章４" %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :seat, "文章４" %><br>
+    <%= f.text_field :seat %>
+  </div>
+  <div class="field">
+    <%= f.label :private, "文章４" %><br>
+    <%= f.text_field :private %>
+  </div>
+  <div class="field">
+    <%= f.label :tatami, "文章４" %><br>
+    <%= f.text_field :tatami %>
+  </div>
+  <div class="field">
+    <%= f.label :smoke, "文章４" %><br>
+    <%= f.text_field :smoke %>
+  </div>
+  <div class="field">
+    <%= f.label :parking, "文章４" %><br>
+    <%= f.text_field :parking %>
+  </div>
+  <div class="field">
+    <%= f.label :reserve, "文章４" %><br>
+    <%= f.text_field :reserve %>
+  </div>
+  <div class="field">
+    <%= f.label :card, "文章４" %><br>
+    <%= f.text_field :card %>
+  </div>
+  <div class="field">
+    <%= f.label :plus, "文章４" %><br>
+    <%= f.text_field :plus %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
