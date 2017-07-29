@@ -39,14 +39,6 @@ $(function(){
    });
 });
 
-$(function () {
-  $(".child").hover(function(){
-    $(this).css('box-shadow','0px 0px 6px 3px #f27516');
- },
- function(){
-  $(this).css('box-shadow',' 1px 1px 1px rgba(0,0,0,0.4)')});
-
-});
 
 $(window).scroll(function () {
         if ($(this).scrollTop() > 1000) {

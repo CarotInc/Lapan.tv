@@ -1,0 +1,103 @@
+<div class="contents row" id="form">
+<%= form_for(@topic, :url => {:controller => :posts,:action => :create }) do |c| %>
+  <div class="field">
+    <%= c.label :name, "題名" %><br>
+    <%= c.text_field :name %>
+  </div>
+  <div class="field">
+    <%= c.label :tagname, "説明文" %><br>
+    <%= c.text_field :tagname %>
+  </div>
+  <div class="field">
+    <%= c.label :image, "サムネイル" %><br>
+    <%= c.file_field :image %>
+  </div>
+  <div class="field">
+    <%= c.label :post1, "投稿1" %><br>
+    <%= c.text_field :post1 %>
+  </div>
+  <div class="field">
+    <%= c.label :post2, "投稿2" %><br>
+    <%= c.text_field :post2 %>
+  </div>
+  <div class="field">
+    <%= c.label :post3, "投稿3" %><br>
+    <%= c.text_field :post3 %>
+  </div>
+  <div class="field">
+    <%= c.label :post4, "投稿4" %><br>
+    <%= c.text_field :post4 %>
+  </div>
+  <div class="field">
+    <%= c.label :post5, "投稿5" %><br>
+    <%= c.text_field :post5 %>
+  </div>
+  <div class="field">
+    <%= c.label :post6, "投稿6" %><br>
+    <%= c.text_field :post6 %>
+  </div>
+  <div class="field">
+    <%= c.label :post7, "投稿7" %><br>
+    <%= c.text_field :post7 %>
+  </div>
+  <div class="field">
+    <%= c.label :post8, "投稿8" %><br>
+    <%= c.text_field :post8 %>
+  </div>
+  <div class="field">
+    <%= c.label :post9, "投稿9" %><br>
+    <%= c.text_field :post9 %>
+  </div>
+  <div class="field">
+    <%= c.label :post10, "投稿10" %><br>
+    <%= c.text_field :post10 %>
+  </div>
+  <div class="field">
+    <%= c.label :post11, "投稿11" %><br>
+    <%= c.text_field :post11 %>
+  </div>
+  <div class="field">
+    <%= c.label :post12, "投稿12" %><br>
+    <%= c.text_field :post12 %>
+  </div>
+  <div class="field">
+    <%= c.label :post13, "投稿13" %><br>
+    <%= c.text_field :post13 %>
+  </div>
+  <div class="field">
+    <%= c.label :post14, "投稿14" %><br>
+    <%= c.text_field :post14 %>
+  </div>
+  <div class="field">
+    <%= c.label :post15, "投稿15" %><br>
+    <%= c.text_field :post15 %>
+  </div>
+    <div class="field">
+    <%= c.label :post15, "投稿15" %><br>
+    <%= c.text_field :post15 %>
+  </div>
+    <div class="field">
+    <%= c.label :post16, "投稿16" %><br>
+    <%= c.text_field :post16 %>
+  </div>
+    <div class="field">
+    <%= c.label :post17, "投稿17" %><br>
+    <%= c.text_field :post17 %>
+  </div>
+    <div class="field">
+    <%= c.label :post18, "投稿18" %><br>
+    <%= c.text_field :post18 %>
+  </div>
+    <div class="field">
+    <%= c.label :post19, "投稿19" %><br>
+    <%= c.text_field :post19 %>
+  </div>
+    <div class="field">
+    <%= c.label :post20, "投稿20" %><br>
+    <%= c.text_field :post20 %>
+  </div>
+  <div class="actions">
+    <%= c.submit %>
+  </div>
+<% end %>
+</div>

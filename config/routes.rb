@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'tag/search' => 'posts#tag'
   get 'tag/:tag' => 'posts#tag'
   get '/posts/topic/new' => 'posts#newtopic'
+  get '/:id/topic' => 'posts#topicshow'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

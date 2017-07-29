@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170707024653) do
+ActiveRecord::Schema.define(version: 20170720114759) do
 
   create_table "diys", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -75,6 +75,34 @@ ActiveRecord::Schema.define(version: 20170707024653) do
     t.string  "name",                       collation: "utf8_bin"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  end
+
+  create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "name",       limit: 65535
+    t.binary   "image",      limit: 65535
+    t.text     "tagname",    limit: 65535
+    t.text     "post1",      limit: 65535
+    t.text     "post2",      limit: 65535
+    t.text     "post3",      limit: 65535
+    t.text     "post4",      limit: 65535
+    t.text     "post5",      limit: 65535
+    t.text     "post6",      limit: 65535
+    t.text     "post7",      limit: 65535
+    t.text     "post8",      limit: 65535
+    t.text     "post9",      limit: 65535
+    t.text     "post10",     limit: 65535
+    t.text     "post11",     limit: 65535
+    t.text     "post12",     limit: 65535
+    t.text     "post13",     limit: 65535
+    t.text     "post14",     limit: 65535
+    t.text     "post15",     limit: 65535
+    t.text     "post16",     limit: 65535
+    t.text     "post17",     limit: 65535
+    t.text     "post18",     limit: 65535
+    t.text     "post19",     limit: 65535
+    t.text     "post20",     limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
