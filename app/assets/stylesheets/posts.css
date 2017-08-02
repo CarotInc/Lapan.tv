@@ -109,7 +109,7 @@ footer {
   border-top: 1px solid #eaeaea;
   color: gray;
   a {
-    color: $gray;
+    color: gray;
     &:hover {
       color: gray;
     }
