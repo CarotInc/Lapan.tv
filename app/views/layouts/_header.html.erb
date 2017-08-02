@@ -1,11 +1,11 @@
 <header id="header" class="u-pt-20 u-pl-40">
-    <div class="header allow_submit">
+    <div class="header">
       <div class = "header-logo" id="toggle"><a href="/" class="header-logo">Lapan.tv</a></div>
-      <nav class="form allow_submit">
-        <%= search_form_for(@q, url: '/search/product', method: :get,:class => 'allow_submit') do |f| %>
+      <nav class="form">
+        <%= search_form_for(@q, url: '/search/product', method: :get, html: {class: 'allow_submit'}) do |f| %>
           <%= f.label :title_cont %>
           <%= f.search_field :title_cont %>
-          <%= f.submit :class => 'allow_submit' %>
+          <%= f.submit%>
         <% end %>
       </nav>
     </div>
