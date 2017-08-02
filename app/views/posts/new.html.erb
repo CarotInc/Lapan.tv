@@ -13,7 +13,11 @@
     <%= f.file_field :image %>
   </div>
   <div class="field">
-    <%= f.label :tag_list, "カテゴリー（カンマ区切り）" %><br>
+    <%= f.label :category_list, "カテゴリー（カンマ区切り）" %><br>
+    <%= text_field_tag 'diy[category_list]', @diy.category_list.join(',') %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list, "タグ（カンマ区切り）" %><br>
     <%= text_field_tag 'diy[tag_list]', @diy.tag_list.join(","), class: "form-control" %>
   </div>
   <div class="field">

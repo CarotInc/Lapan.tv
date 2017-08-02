@@ -204,3 +204,9 @@ footer {
   height: 100px;
   border-radius: 400px;
 }
+.topImage{
+  height: 300px;
+  width: 100%;
+  background-image: url("macaron.png");
+  
+}

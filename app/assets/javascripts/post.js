@@ -49,3 +49,9 @@ $(window).scroll(function () {
             $('.subvideo').pause();
         }
     });
+
+$(function() {
+  $(document).on("keypress", "input:not(.allow_submit)", function(event) {
+    return event.which !== 13;
+  });
+});

@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170720114759) do
     t.text     "reserve",    limit: 65535
     t.text     "card",       limit: 65535
     t.text     "plus",       limit: 65535
+    t.text     "category",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

@@ -36,6 +36,7 @@ class CreateDiys < ActiveRecord::Migration[5.0]
       t.text      :reserve
       t.text      :card
       t.text      :plus
+      t.text      :category
       t.timestamps
     end
   end

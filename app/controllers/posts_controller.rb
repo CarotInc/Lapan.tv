@@ -34,16 +34,6 @@ class PostsController < ApplicationController
     @people = @q.result(distinct: true)
   end
 
-  def newtopic
-    @topic = Topic.new
-    @q = Diy.ransack(params[:q])
-    @people = @q.result(distinct: true)
-  end
-
-  def create
-    Topic.create(topic_params)
-  end
-
   def topicshow
     @post = Diy.all.order("id DESC")
     @topics = Topic.find(id_params[:id])
@@ -53,11 +43,7 @@ class PostsController < ApplicationController
 
    private
   def diy_params
-    params.require(:diy).permit(:title, :image, :text, :video, :tag_list, :title1,:image1,:contents1,:title2,:image2,:contents2,:title3,:image3,:contents3,:title4,:image4,:contents4 ,:prefecture,:area,:address,:name,:station,:call,:access,:open,:close,:url,:price, :seat,:private, :tatami,:smoke,:parking,:reserve,:card,:plus)
-  end
-
-  def topic_params
-    params.require(:topic).permit(:name,:image,:tagname,:post1,:post2,:post3,:post4,:post5,:post6,:post7,:post8,:post9,:post10,:post11,:post12,:post13,:post14,:post16,:post17,:post18,:post19,:post20)
+    params.require(:diy).permit(:title, :image, :text, :video, :tag_list, :title1,:image1,:contents1,:title2,:image2,:contents2,:title3,:image3,:contents3,:title4,:image4,:contents4 ,:prefecture,:area,:address,:name,:station,:call,:access,:open,:close,:url,:price, :seat,:private, :tatami,:smoke,:parking,:reserve,:card,:plus,:category_list)
   end
 
     private

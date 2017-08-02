@@ -25,17 +25,8 @@
       <p class="subBorder">カテゴリー</p>
       <div class="make_border_2"></div>
             <div>
-              <% @tags.each do |tag| %>
-                <%= link_to ({:action => :tag, :name => tag.name}) do%>
-                <div class="pure-u-1-4">
-                  <div>
-                    <img src=<%= tag.name + ".png" %> alt="" class = "tagImage">
-                  </div>
-                <div>
-                  <%= tag.name %>
-                </div>
-                </div>
-                <% end %>
+            <% @posts.each do |tag| %>
+              <%= render 'posts/tag_list', tag_list: tag.category_list %>
               <% end %>
       </div>
     </div>
