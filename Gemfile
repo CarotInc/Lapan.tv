@@ -60,6 +60,7 @@ gem 'jquery'
 gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'flowplayer'
+gem 'gretel'
 group :production, :staging do
     gem 'unicorn'
 end

@@ -17,6 +17,9 @@ class CreateDiys < ActiveRecord::Migration[5.0]
       t.text      :title4
       t.text      :contents4
       t.binary    :image4
+      t.text      :title5
+      t.text      :contents5
+      t.binary    :image5
       t.text      :prefecture
       t.text      :area
       t.text      :address
@@ -25,17 +28,8 @@ class CreateDiys < ActiveRecord::Migration[5.0]
       t.text      :call
       t.text      :access
       t.text      :open
-      t.text      :close
       t.text      :url
-      t.text      :price
-      t.text      :seat
-      t.text      :private
-      t.text      :tatami
-      t.text      :smoke
-      t.text      :parking
-      t.text      :reserve
-      t.text      :card
-      t.text      :plus
+      t.text      :instagram
       t.text      :category
       t.timestamps
     end

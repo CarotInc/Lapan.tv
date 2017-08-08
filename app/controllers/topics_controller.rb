@@ -1,5 +1,11 @@
 class TopicsController < ApplicationController
 
+  def index
+    @topics = Topic.all.order("id DESC")
+    @q = Diy.ransack(params[:q])
+    @people = @q.result(distinct: true)
+  end
+
   def new
     @topic = Topic.new
     @q = Diy.ransack(params[:q])
@@ -7,7 +13,8 @@ class TopicsController < ApplicationController
   end
 
   def create
-    Topic.create(topic_params)
+    @post = Topic.create(topic_params)
+    @post.save
   end
 
   def topic_params

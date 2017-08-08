@@ -1,97 +1,191 @@
 
 <div class="main-content">
   <div class="row">
+    
     <div class="content-area">
       <div class="pure-g">
-        <div class="pure-u-2-3">
+      <div class = "video pure-u-1-3">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:500px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+
+          <%= link_to "", @posts.video, {:target => "_brank"} %>
+        </blockquote>
+        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+      </div>
+      <div class="pure-u-2-3">
           <div class = "mainText">
-            <h1 class="title" ><%= @posts.title %></h1>
+            <h1 class="title u-pl-40" ><%= @posts.title %></h1>
           </div>
-          <div class = "subText">
+          <div class = "subText u-pl-40">
             <%= simple_format(@posts.text) %>
           </div>
-        </div>
-        <div class="pure-u-1-3">
-          <div>
-            <button id = "modal-open">♡お気に入り</button>
+          <div class="make_border"></div>
+          <div class="u-pt-20 u-pl-40">
+            <a href=<%="https://twitter.com/intent/tweet?url=http://lapan.tv/" + (@posts.id).to_s + "&text=" + (@posts.title) + "&via=lapan_tv&hashtags=&related=lapan_tv"%> title=""><img src="twitter.png" alt="" class="twitter"></a>
+            <a href=<%="http://www.facebook.com/share.php?u=http://lapan.tv/" + (@posts.id).to_s %> title=""><img src="facebook.png" alt="" class="twitter"></a>
           </div>
-          <div id = "modal-main">
-            <%= image_tag("lapan.png") %>
-            <h3>動画をアプリやInstagramで見よう！</h3>
-          </div>
-          <div>
             カテゴリー：<% @posts.tag_list.each do |tag| %>
             <span class="label label-primary"><%= link_to tag, { :action => :tag, :name => tag}%></span>
             <% end %>
           </div>
         </div>
       </div>
-      <div class = "video">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:1000px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-
-          <%= link_to "", @posts.video, {:target => "_brank"} %>
-        </blockquote>
-        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
-      </div>
     </div><!--/.content-area--><!--/.content-area-->
   </div>
   <div class="pure-g maincontents">
     <div class="pure-u-2-3">
-      <div class="title">
-        <%= simple_format(@posts.title1) %>
+        <div>
+    <table class="u-ml-40">
+    <tr>
+    <th> <span class="dot">・</span>店名</th>
+        <td><%= simple_format(@posts.name) %></td>
+    </tr>
+    <tr>
+        <th><span class="dot">・</span>アクセス</th>
+        <td><%= simple_format(@posts.access)%></td>
+    </tr>
+    <tr>
+        <th><span class="dot">・</span>営業時間</th>
+        <td><%= simple_format(@posts.open) %></td>
+    </tr>
+    <tr>
+        <th><span class="dot">・</span>電話番号</th>
+        <td><%= simple_format(@posts.call)%></td>
+    </tr>
+    <tr>
+        <th><span class="dot">・</span>住所</th>
+        <td><%= simple_format(@posts.address)%></td>
+    </tr>
+    <tr>
+        <th><span class="dot">・</span>公式HP</th>
+        <td><%= simple_format(@posts.url)%></td>
+    </tr>
+    <tr>
+        <th><span class="dot">・</span>instagram スポット</th>
+        <td><%= simple_format(@instagram)%></td>
+    </tr>
+</table>
+  </div>
+    <p class="menu">メニュー</p>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <img src=<%= @posts.image1 %> class = "image">
+        </div>
+        <div class="pure-u-1-2">
+            <div class="title">
+            <%= simple_format(@posts.title1) %>
+          </div>
+          <% if @posts.title1 == nil || @posts.title1 == "" then %>
+          <%else%>
+            <div class="make_border"></div>
+          <% end %>
+          <div>
+            <%= simple_format(@posts.contents1) %>
+          </div>
+        </div>
+      <div class="pure-u-1-2">
+        <img src=<%= @posts.image2 %> class ="image">
       </div>
-      <div class="make_border"></div>
-      <div>
-        <img src=<%= @posts.image1 %>>
-      </div>
-      <div>
-        <%= simple_format(@posts.contents1) %>
-      </div>
-      <div class="title">
+      <div class="pure-u-1-2">
+        <div class="title">
         <%= simple_format(@posts.title2) %>
       </div>
-      <div class="make_border"></div>
-      <div>
-        <img src=<%= @posts.image2 %>>
-      </div>
+      <% if @posts.title2 == nil || @posts.title2 == "" then %>
+      <%else%>
+        <div class="make_border"></div>
+      <% end %>
       <div>
         <%= simple_format(@posts.contents2) %>
       </div>
-      <div class="title">
-        <%= simple_format(@posts.title3) %>
       </div>
-      <div class="make_border"></div>
+      <% if @posts.title3 == nil || @posts.title3 == "" then %>
+      <%else%>
+      <div class="pure-u-1-2">
+          <img src=<%= @posts.image3 %> class = "image">
+        </div>
+        <div class="pure-u-1-2">
+            <div class="title">
+            <%= simple_format(@posts.title3) %>
+          </div>
+            <div class="make_border"></div>
+          <div>
+            <%= simple_format(@posts.contents3) %>
+          </div>
+        </div>
+        <% end %>
+        <% if @posts.title4 == nil || @posts.title4 == "" then %>
+          <%else%>
+      <div class="pure-u-1-2">
+          <img src=<%= @posts.image4 %> class = "image">
+        </div>
+        <div class="pure-u-1-2">
+            <div class="title">
+            <%= simple_format(@posts.title4) %>
+          </div>
+            <div class="make_border"></div>
+          <div>
+            <%= simple_format(@posts.contents4) %>
+          </div>
+        </div>
+        <% end %>
+        <% if @posts.title5 == nil || @posts.title5 == "" then %>
+          <%else%>
+      <div class="pure-u-1-2">
+          <img src=<%= @posts.image5 %> class = "image">
+        </div>
+        <div class="pure-u-1-2">
+            <div class="title">
+            <%= simple_format(@posts.title5) %>
+          </div>
+            <div class="make_border"></div>
+          <div>
+            <%= simple_format(@posts.contents5) %>
+          </div>
+        </div>
+        <% end %>
+    </div>
+    <div>
       <div>
-        <img src=<%= @posts.image3 %>>
+      <p class="mainBorder">新着情報</p>
+      <div class="make_border_2"></div>
+      <div>
+        <%= render :partial => "diy" , :collection => @video %>
       </div>
       <div>
-        <%= simple_format(@posts.contents3) %>
-      </div>
-      <div class="title">
-        <%= simple_format(@posts.title4) %>
-      </div>
-      <div class="make_border"></div>
-      <div>
-        <img src=<%= @posts.image4 %>>
-      </div>
-      <div>
-        <%= simple_format(@posts.contents4) %>
+        <a href="/posts/newposts" title="">>もっと見る</a>
       </div>
     </div>
-      <div class="pure-u-1-3">
-        <div class = "subvideo">
-          <iframe src=<%= @posts.video %> width="600" height="600" frameborder="0" scrolling="no" autostart="1"></iframe>
-        </div>
-
     </div>
   </div>
 
-  <div class="pure-g">
+  <div class="pure-u-1-3">
     <div>
-      <p>同じタグ</p>
+      <p class="mainBorder">あなたへのオススメ</p>
+      <div class="make_border_2"></div>
     </div>
     <div>
       <%= render 'posts/related_posts', posts: @posts.find_related_tags %>
+    </div>
+    <div>
+      <a href="/for/you" title="">>もっと見る</a>
+    </div>
+    <div>
+      <p class="mainBorder">ピックアップ</p>
+      <div class="make_border_2"></div>
+      <a href="/more/pickup" title="">>もっと見る</a>
+    </div>
+    <div>
+      <p class="mainBorder">広告</p>
+      <div class="make_border_2"></div>
+    </div>
+    <div>
+      <p class="subBorder">特集</p>
+      <div class="make_border_2"></div>
+      <div>
+        <%= render 'posts/topic' %>
+      </div>
+      <div>
+      <a href="/topic/all">もっと見る</a>
+      </div>
     </div>
   </div>
 

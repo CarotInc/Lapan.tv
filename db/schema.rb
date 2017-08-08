@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20170720114759) do
     t.text     "title4",     limit: 65535
     t.text     "contents4",  limit: 65535
     t.binary   "image4",     limit: 65535
+    t.text     "title5",     limit: 65535
+    t.text     "contents5",  limit: 65535
+    t.binary   "image5",     limit: 65535
     t.text     "prefecture", limit: 65535
     t.text     "area",       limit: 65535
     t.text     "address",    limit: 65535
@@ -37,17 +40,8 @@ ActiveRecord::Schema.define(version: 20170720114759) do
     t.text     "call",       limit: 65535
     t.text     "access",     limit: 65535
     t.text     "open",       limit: 65535
-    t.text     "close",      limit: 65535
     t.text     "url",        limit: 65535
-    t.text     "price",      limit: 65535
-    t.text     "seat",       limit: 65535
-    t.text     "private",    limit: 65535
-    t.text     "tatami",     limit: 65535
-    t.text     "smoke",      limit: 65535
-    t.text     "parking",    limit: 65535
-    t.text     "reserve",    limit: 65535
-    t.text     "card",       limit: 65535
-    t.text     "plus",       limit: 65535
+    t.text     "instagram",  limit: 65535
     t.text     "category",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -82,26 +76,47 @@ ActiveRecord::Schema.define(version: 20170720114759) do
     t.text     "name",       limit: 65535
     t.binary   "image",      limit: 65535
     t.text     "tagname",    limit: 65535
+    t.binary   "topvideo",   limit: 65535
     t.text     "post1",      limit: 65535
+    t.binary   "video1",     limit: 65535
     t.text     "post2",      limit: 65535
+    t.binary   "video2",     limit: 65535
     t.text     "post3",      limit: 65535
+    t.binary   "video3",     limit: 65535
     t.text     "post4",      limit: 65535
+    t.binary   "video4",     limit: 65535
     t.text     "post5",      limit: 65535
+    t.binary   "video5",     limit: 65535
     t.text     "post6",      limit: 65535
+    t.binary   "video6",     limit: 65535
     t.text     "post7",      limit: 65535
+    t.binary   "video7",     limit: 65535
     t.text     "post8",      limit: 65535
+    t.binary   "video8",     limit: 65535
     t.text     "post9",      limit: 65535
+    t.binary   "video9",     limit: 65535
     t.text     "post10",     limit: 65535
+    t.binary   "video10",    limit: 65535
     t.text     "post11",     limit: 65535
+    t.binary   "video11",    limit: 65535
     t.text     "post12",     limit: 65535
+    t.binary   "video12",    limit: 65535
     t.text     "post13",     limit: 65535
+    t.binary   "video13",    limit: 65535
     t.text     "post14",     limit: 65535
+    t.binary   "video14",    limit: 65535
     t.text     "post15",     limit: 65535
+    t.binary   "video15",    limit: 65535
     t.text     "post16",     limit: 65535
+    t.binary   "video16",    limit: 65535
     t.text     "post17",     limit: 65535
+    t.binary   "video17",    limit: 65535
     t.text     "post18",     limit: 65535
+    t.binary   "video18",    limit: 65535
     t.text     "post19",     limit: 65535
+    t.binary   "video19",    limit: 65535
     t.text     "post20",     limit: 65535
+    t.binary   "video20",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

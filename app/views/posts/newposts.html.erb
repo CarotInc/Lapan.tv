@@ -1,0 +1,8 @@
+<div>
+      <p class="mainBorder">新着情報</p>
+      <div class="make_border_2"></div>
+      <%= render :partial => "diy" , :collection => @posts %>
+      <div>
+        <%= paginate(@posts) %>
+      </div>
+    </div>

@@ -14,18 +14,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    Diy.create(diy_params)
+    @diy = Diy.create(diy_params)
+    @diy.save
   end
 
   def show
     @posts = Diy.find(id_params[:id])
     @q = Diy.ransack(params[:q])
     @result = @q.result(distinct: true)
+    @video = Diy.all.order("id DESC").page(params[:page]).per(16)
+    @topics = Topic.all.order("id DESC")
   end
 
   def search
     @q = Diy.search(search_params)
     @result = @q.result(distinct: true)
+    @search = search_params
   end
 
   def tag
@@ -41,6 +45,22 @@ class PostsController < ApplicationController
     @result = @q.result(distinct: true)
   end
 
+  def newposts
+    @posts = Diy.all.order("id DESC").page(params[:page]).per(16)
+    @q = Diy.ransack(params[:q])
+    @people = @q.result(distinct: true)
+  end
+
+  def foryou
+    @q = Diy.ransack(params[:q])
+    @people = @q.result(distinct: true)
+  end
+
+  def pickup
+    @q = Diy.ransack(params[:q])
+    @people = @q.result(distinct: true)
+  end
+
    private
   def diy_params
     params.require(:diy).permit(:title, :image, :text, :video, :tag_list, :title1,:image1,:contents1,:title2,:image2,:contents2,:title3,:image3,:contents3,:title4,:image4,:contents4 ,:prefecture,:area,:address,:name,:station,:call,:access,:open,:close,:url,:price, :seat,:private, :tatami,:smoke,:parking,:reserve,:card,:plus,:category_list)
@@ -48,7 +68,7 @@ class PostsController < ApplicationController
 
     private
   def search_params
-    params.require(:q).permit(:title_cont)
+    params.require(:q).permit(:title_or_station_or_area_or_name_or_prefecture_or_title1_cont)
   end
 
   def tag_params

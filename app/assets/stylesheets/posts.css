@@ -26,7 +26,7 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
@@ -93,9 +93,10 @@ header{
   margin:auto;
 }
 .make_border{
+  width: 90%;
   height:2px;
   background:linear-gradient(-90deg, #FA5858, #FA5858);
-  margin-top:0px;
+  margin:auto;
 }
 .form{
   text-align: right;
@@ -184,6 +185,7 @@ footer {
   max-width: 330px;
   max-height: 250px;
   border-radius: 25px;
+  margin-left: 60px;
 }
 
 .subvideo{
@@ -198,7 +200,7 @@ footer {
   padding-top: 80px;
 }
 .video{
-  background-color: black;
+  
 }
 .tagImage{
   height: 100px;
@@ -208,5 +210,69 @@ footer {
   height: 300px;
   width: 100%;
   background-image: url("macaron.png");
-  
+}
+
+.a{
+  display: none;
+}
+
+.sublogo{
+  font-size: 10px;
+  float: left;
+  margin-left: 10px;
+  color: gray;
+}
+
+.form{
+  margin-right: 100px;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+table th,
+table td {
+  padding: .6em 3em;
+  border-bottom: 1px solid #aaa;
+}
+table th {
+  background-color: #fff6f6;
+}
+table th,
+table td {
+  border-left: 1px solid #aaa;
+}
+table tr:last-child th,
+table tr:last-child td {
+  border-bottom: none;
+}
+/*table th:first-letter{
+  color: #FA5858
+}*/
+.menu{
+  border: 1px solid #ccc;
+  border-left: 10px solid rgb(250,88,88);
+  padding-left: 30px;
+  margin-left: 30px;
+  border-radius: 5px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.twitter{
+  height: 50px;
+  border-radius: 400px;
+}
+
+.subtext {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.dot {
+  color: rgb(250,88,88);
 }

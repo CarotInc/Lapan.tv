@@ -8,7 +8,7 @@
       <div class="make_border_2"></div>
       <%= render :partial => "diy" , :collection => @posts %>
       <div>
-        <%= paginate(@posts) %>
+        <a href="/posts/newposts" title="">>もっと見る</a>
       </div>
     </div>
     <div>
@@ -36,12 +36,18 @@
       <div>
         <%= render 'posts/topic' %>
       </div>
+      <div>
+      <a href="/topic/all">もっと見る</a>
+      </div>
     </div>
     <div>
       <p class="subBorder">ピックアップ</p>
       <div class="make_border_2"></div>
       <div>
         
+      </div>
+      <div>
+        <a href="" title="">>もっと見る</a>
       </div>
     </div>
   </div>

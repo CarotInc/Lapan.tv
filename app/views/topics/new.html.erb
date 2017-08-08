@@ -1,5 +1,5 @@
 <div class="contents row" id="form">
-<%= form_for(@topic, :url => {:controller => :topics,:action => :create }) do |c| %>
+<%= form_for(@topic, :url => {:controller => :topics , :action => :create }) do |c| %>
   <div class="field">
     <%= c.label :name, "題名" %><br>
     <%= c.text_field :name %>
@@ -12,6 +12,11 @@
     <%= c.label :image, "サムネイル" %><br>
     <%= c.file_field :image %>
   </div>
+  <div>
+    <%= c.label :topvideo, "特集ビデオ" %><br>
+    <%= c.file_field :topvideo %>
+  </div>
+  <div>______________店名で特集を組む場合__________________</div>
   <div class="field">
     <%= c.label :post1, "投稿1" %><br>
     <%= c.text_field :post1 %>
@@ -95,6 +100,89 @@
     <div class="field">
     <%= c.label :post20, "投稿20" %><br>
     <%= c.text_field :post20 %>
+  </div>
+  <div>_______________動画で特集を組むばあい。________________</div>
+  <div>
+  <div class="field">
+    <%= c.label :video1, "１つ目の動画" %><br>
+    <%= c.file_field :video1 %>
+  </div>
+  <div class="field">
+    <%= c.label :video2, "2つ目の動画" %><br>
+    <%= c.file_field :video2 %>
+  </div>
+  <div class="field">
+    <%= c.label :video3, "3つ目の動画" %><br>
+    <%= c.file_field :video3 %>
+  </div>
+  <div class="field">
+    <%= c.label :video4, "4つ目の動画" %><br>
+    <%= c.file_field :video4 %>
+  </div>
+  <div class="field">
+    <%= c.label :video5, "5つ目の動画" %><br>
+    <%= c.file_field :video5 %>
+  </div>
+  <div class="field">
+    <%= c.label :video6, "6つ目の動画" %><br>
+    <%= c.file_field :video6 %>
+  </div>
+  <div class="field">
+    <%= c.label :video7, "7つ目の動画" %><br>
+    <%= c.file_field :video7 %>
+  </div>
+  <div class="field">
+    <%= c.label :video8, "8つ目の動画" %><br>
+    <%= c.file_field :video8 %>
+  </div>
+  <div class="field">
+    <%= c.label :video9, "9つ目の動画" %><br>
+    <%= c.file_field :video9 %>
+  </div>
+  <div class="field">
+    <%= c.label :video10, "１0つ目の動画" %><br>
+    <%= c.file_field :video10 %>
+  </div>
+  <div class="field">
+    <%= c.label :video11, "１1つ目の動画" %><br>
+    <%= c.file_field :video11 %>
+  </div>
+  <div class="field">
+    <%= c.label :video12, "１2つ目の動画" %><br>
+    <%= c.file_field :video12 %>
+  </div>
+  <div class="field">
+    <%= c.label :video13, "１3つ目の動画" %><br>
+    <%= c.file_field :video13 %>
+  </div>
+  <div class="field">
+    <%= c.label :video14, "１4つ目の動画" %><br>
+    <%= c.file_field :video14 %>
+  </div>
+  <div class="field">
+    <%= c.label :video15, "１5つ目の動画" %><br>
+    <%= c.file_field :video15 %>
+  </div>
+  <div class="field">
+    <%= c.label :video16, "１6つ目の動画" %><br>
+    <%= c.file_field :video16 %>
+  </div>
+  <div class="field">
+    <%= c.label :video17, "１7つ目の動画" %><br>
+    <%= c.file_field :video17 %>
+  </div>
+  <div class="field">
+    <%= c.label :video18, "１8つ目の動画" %><br>
+    <%= c.file_field :video18 %>
+  </div>
+  <div class="field">
+    <%= c.label :video19, "19つ目の動画" %><br>
+    <%= c.file_field :video19 %>
+  </div>
+  <div class="field">
+    <%= c.label :video20, "20つ目の動画" %><br>
+    <%= c.file_field :video20 %>
+  </div>
   </div>
   <div class="actions">
     <%= c.submit %>
