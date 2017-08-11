@@ -25,10 +25,6 @@ class PostsController < ApplicationController
     @result = @q.result(distinct: true)
     @video = Diy.all.order("id DESC").page(params[:page]).per(16)
     @topics = Topic.all.order("id DESC")
-    REDIS.incr "posts/daily/#{Date.today.to_s}/#{@post.id}"
-    # PV数1位から20位までの記事を取得
-    ids = REDIS.zrevrange "posts/dayly/#{Date.today.to_s}", 0, 10
-    @posts = Diy.where(id: ids)
   end
 
   def search
