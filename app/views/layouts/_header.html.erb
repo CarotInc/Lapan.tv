@@ -1,10 +1,13 @@
-<header id="header" class="u-pt-20 u-pl-40">
-    <div class="header">
-      <div class = "header-logo" id="toggle"><a href="/" class="header-logo">Lapan.tv</a></div>
-      <div>
-        <p class="sublogo">女の子のまいにちを<br>おいしくかわいく♡</p>
+<header id="header" class="u-pt-20 u-pl-40¥">
+    <div class="header pure-g">
+      <div class="pure-u-1-5"></div>
+      <div class="pure-u-2-5">
+          <div class = "header-logo" id="toggle"><a href="/" class="header-logo">Lapan.tv</a></div>
+        <div>
+          <p class="sublogo">女の子のまいにちを<br>おいしくかわいく♡</p>
+        </div>
       </div>
-      <nav class="form">
+      <nav class="form pure-u-1-5">
         <%= search_form_for(@q, url: '/search/product', method: :get, html: {class: 'allow_submit'}) do |f| %>
           <%= f.search_field :title_or_station_or_area_or_name_or_prefecture_or_title1_cont ,placeholder: "料理名＿食材でレシピを検索"%>
           <%= f.submit :class => "a"%>

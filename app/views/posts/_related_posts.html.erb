@@ -1,9 +1,9 @@
 <%= link_to "/#{posts.map { |post| post.id}.join(" ") }" do %>
-<span class="pure-u-1-4 child">
+<span class="recomend">
   <div class = "squareImage">
-    <img src=<%= posts.map { |post| post.image}.join(" ") %> alt="" class = "image">
+    <img src=<%= posts.map { |post| post.image}.join(" ") %> alt="" class = "recomend__image">
   </div>
-  <div class = "titleText">
+  <div class = "recomend__title">
     <%= posts.map { |post| post.title}.join(" ") %>
   </div>
   </span>

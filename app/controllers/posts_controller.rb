@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @q = Diy.ransack(params[:q])
     @people = @q.result(distinct: true)
     @tags = ActsAsTaggableOn::Tag.all
+
   end
 
   def new
@@ -19,17 +20,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Diy.find(id_params[:id])
+    @post = Diy.find(id_params[:id])
     @q = Diy.ransack(params[:q])
     @result = @q.result(distinct: true)
     @video = Diy.all.order("id DESC").page(params[:page]).per(16)
     @topics = Topic.all.order("id DESC")
+    REDIS.incr "posts/daily/#{Date.today.to_s}/#{@post.id}"
+    # PV数1位から20位までの記事を取得
+    ids = REDIS.zrevrange "posts/dayly/#{Date.today.to_s}", 0, 10
+    @posts = Diy.where(id: ids)
   end
 
   def search
     @q = Diy.search(search_params)
     @result = @q.result(distinct: true)
-    @search = search_params
   end
 
   def tag

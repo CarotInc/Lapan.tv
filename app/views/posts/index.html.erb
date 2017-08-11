@@ -1,30 +1,32 @@
-<div>
-  <img src="macaron.png" alt="">
+<div class="top__image">
+  <img src="macaron.png" alt="" class="top__image__image">
 </div>
 <div id="content" class="pure-g">
-  <div id="mainContent" class="pure-u-2-3">
+  <div class="pure-u-1-5">
+  </div>
+  <div id="mainContent" class="pure-u-2-5">
     <div>
       <p class="mainBorder">気になるお店</p>
-      <div class="make_border_2"></div>
-      <%= render :partial => "diy" , :collection => @posts %>
-      <div>
-        <a href="/posts/newposts" title="">>もっと見る</a>
+      <div class="home__post__border"></div>
+      <div class=""><%= render :partial => "diy" , :collection => @posts %></div>
+      <div class="more">
+        <a href="/posts/newposts" title="" class="more">>もっと見る</a>
       </div>
     </div>
     <div>
       <p class="mainBorder">新着情報</p>
-      <div class="make_border_2"></div>
-      <%= render :partial => "diy" , :collection => @posts %>
+      <div class="home__post__border"></div>
+      <div class="pure-g"><%= render :partial => "diy" , :collection => @posts %></div>
       <div>
         <%= paginate(@posts) %>
       </div>
     </div>
   </div>
-  <div id="subContent" class="pure-u-1-3">
+  <div id="subContent" class="pure-u-1-5">
     <div>
       <p class="subBorder">カテゴリー</p>
       <div class="make_border_2"></div>
-            <div>
+            <div class="">
             <% @posts.each do |tag| %>
               <%= render 'posts/tag_list', tag_list: tag.category_list %>
               <% end %>
@@ -36,8 +38,8 @@
       <div>
         <%= render 'posts/topic' %>
       </div>
-      <div>
-      <a href="/topic/all">もっと見る</a>
+      <div class="more">
+      <a href="/topic/all" class="more">>もっと見る</a>
       </div>
     </div>
     <div>
@@ -46,10 +48,13 @@
       <div>
         
       </div>
-      <div>
-        <a href="" title="">>もっと見る</a>
+      <div class="more">
+        <a href="" title="" class="more">>もっと見る</a>
       </div>
     </div>
+  </div>
+  <div class="pure-u-1-5" >
+    
   </div>
 </div>
 
