@@ -1,7 +1,9 @@
 
 <div class="main-content">
   <div class="row">
-    <div>
+    <div class="pure-u-1-8">
+    </div>
+    <div class="pure-u-2-3">
       <ul>
         <li><a href="/">トップページ</a> &gt;</li>
         <li><% @post.category_list.each do |tag| %>
@@ -13,16 +15,19 @@
         <li><%= @post.title %></li>
       </ul>
     </div>
+    <div class="pure-u-1-8">
+    </div>
     <div class="content-area">
       <div class="pure-g">
-      <div class = "video pure-u-1-3">
+      <div class="pure-u-1-8"></div>
+      <div class = "video pure-u-3-8">
         <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:500px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
 
           <%= link_to "", @post.video, {:target => "_brank"} %>
         </blockquote>
         <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
       </div>
-      <div class="pure-u-2-3">
+      <div class="pure-u-3-8">
           <div class = "mainText">
             <h1 class="title u-pl-40" ><%= @post.title %></h1>
           </div>
@@ -33,15 +38,21 @@
           <div class="u-pt-20 u-pl-40">
             <a href=<%="https://twitter.com/intent/tweet?url=http://lapan.tv/" + (@post.id).to_s + "&text=" + (@post.title) + "&via=lapan_tv&hashtags=&related=lapan_tv"%> title=""><img src="twitter.png" alt="" class="twitter"></a>
             <a href=<%="http://www.facebook.com/share.php?u=http://lapan.tv/" + (@post.id).to_s %> title=""><img src="facebook.png" alt="" class="twitter"></a>
+            <a href= <%="http://line.me/R/msg/text/?" + (@post.title) + (@post.id).to_s %>>
+              <img src="line.png" class="twitter" alt="LINEで送る" />
+            </a>
           </div>
-            
-          </div>
+      </div>
+      <div class="pure-u-1-8">
+        
+      </div>
         </div>
       </div>
     </div><!--/.content-area--><!--/.content-area-->
   </div>
   <div class="pure-g maincontents">
-    <div class="pure-u-2-3">
+    <div class="pure-u-1-8"></div>
+    <div class="pure-u-1-2">
         <div>
     <table class="u-ml-40">
     <tr>
@@ -166,7 +177,7 @@
     </div>
   </div>
 
-  <div class="pure-u-1-3">
+  <div class="pure-u-1-4">
     <div>
       <p class="mainBorder">あなたへのオススメ</p>
       <div class="make_border_2"></div>
@@ -180,9 +191,7 @@
     <div>
       <p class="mainBorder">ピックアップ</p>
       <div class="make_border_2"></div>
-      <p><% @posts.each do |tag| %>
-              <%= render 'posts/ranking', :posts => @posts %>
-              <% end %>
+      <p>
             </p>
             <div class="more"><a href="/more/pickup" title="" class="more">>もっと見る</a></div>
     </div>
@@ -200,6 +209,9 @@
       <a href="/topic/all" class="more">>もっと見る</a>
       </div>
     </div>
+  </div>
+  <div class="pure-u-1-8">
+    
   </div>
 
 </div>

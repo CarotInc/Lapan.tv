@@ -106,6 +106,7 @@ header{
 /* footer */
 
 footer {
+  height: 300px;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
@@ -306,6 +307,7 @@ li {
   border-radius: 10px;
   float: left;
   margin-right: 15px;
+  margin-left: 15px;
 }
 
 .recomend__title{

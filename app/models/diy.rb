@@ -1,6 +1,7 @@
 class Diy < ApplicationRecord
   acts_as_taggable
   acts_as_taggable_on :categorys
+  mount_uploader :movie, VideoUploader
   mount_uploader :image, ImageUploader
   mount_uploader :image1, ImageUploader
   mount_uploader :image2, ImageUploader

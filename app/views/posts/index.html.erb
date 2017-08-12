@@ -1,10 +1,10 @@
 <div class="top__image">
   <img src="macaron.png" alt="" class="top__image__image">
 </div>
-<div id="content" class="pure-g">
-  <div class="pure-u-1-5">
+<div id="content" class="pure-g-r">
+  <div class="pure-u-1-8">
   </div>
-  <div id="mainContent" class="pure-u-2-5">
+  <div id="mainContent" class="pure-u-1-2">
     <div>
       <p class="mainBorder">気になるお店</p>
       <div class="home__post__border"></div>
@@ -16,13 +16,13 @@
     <div>
       <p class="mainBorder">新着情報</p>
       <div class="home__post__border"></div>
-      <div class="pure-g"><%= render :partial => "diy" , :collection => @posts %></div>
+      <div class=""><%= render :partial => "diy" , :collection => @posts %></div>
       <div>
         <%= paginate(@posts) %>
       </div>
     </div>
   </div>
-  <div id="subContent" class="pure-u-1-5">
+  <div id="subContent" class="pure-u-1-4">
     <div>
       <p class="subBorder">カテゴリー</p>
       <div class="make_border_2"></div>
@@ -53,7 +53,7 @@
       </div>
     </div>
   </div>
-  <div class="pure-u-1-5" >
+  <div class="pure-u-1-8" >
     
   </div>
 </div>

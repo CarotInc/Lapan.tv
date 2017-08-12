@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Diy.find(id_params[:id])
+    @post = Diy.find(params[:id])
     @q = Diy.ransack(params[:q])
     @result = @q.result(distinct: true)
     @video = Diy.all.order("id DESC").page(params[:page]).per(16)
