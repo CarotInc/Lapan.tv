@@ -55,3 +55,7 @@ $(function() {
     return event.which !== 13;
   });
 });
+
+$(document).ready(function() {
+  var clip = new ZeroClipboard($("#d_clip_button"))
+});

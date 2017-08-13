@@ -41,11 +41,21 @@
             <a href= <%="http://line.me/R/msg/text/?http://lapan.tv/" + (@post.id).to_s %>>
               <img src="line.png" class="twitter" alt="LINEで送る" />
             </a>
+            <textarea id="fe_text" name="" rows="7" cols="100"><%= "http://lapan.tv/" + (@post.id).to_s %></textarea>
+            <button class='my_clip_button' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button'>
+            <b>コピーする</b>
+            </button>
+            <script>
+              $(document).ready(function() {
+                var clip = new ZeroClipboard($("#d_clip_button"))
+              });
+
+              $("#clear-test").on("click", function(){
+                $("#fe_text").val("Copy me!");
+                $("#testarea").val("");
+              });
+            </script>
           </div>
-      </div>
-      <div class="pure-u-1-8">
-        
-      </div>
         </div>
       </div>
     </div><!--/.content-area--><!--/.content-area-->
