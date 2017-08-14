@@ -61,6 +61,7 @@ gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'flowplayer'
 gem 'gretel'
+gem 'impressionist'
 gem 'zeroclipboard-rails'
 group :production, :staging do
     gem 'unicorn'

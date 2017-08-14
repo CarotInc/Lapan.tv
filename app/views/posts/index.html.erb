@@ -8,7 +8,7 @@
     <div>
       <p class="mainBorder">気になるお店</p>
       <div class="home__post__border"></div>
-      <div class=""><%= render :partial => "diy" , :collection => @posts %></div>
+      <div class=""><%= render :partial => "diy" , :collection => @ranking %></div>
       <div class="more">
         <a href="/posts/newposts" title="" class="more">>もっと見る</a>
       </div>
@@ -27,9 +27,7 @@
       <p class="subBorder">カテゴリー</p>
       <div class="make_border_2"></div>
             <div class="">
-            <% @posts.each do |tag| %>
-              <%= render 'posts/tag_list', tag_list: tag.category_list %>
-              <% end %>
+              <a href="http://localhost:3000/tag/search?name=かき氷" title=""><img src="かき氷.png" alt=""></a>
       </div>
     </div>
     <div>

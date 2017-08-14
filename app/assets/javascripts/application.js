@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require zeroclipboard
 //= require turbolinks
 //= require_tree .
-//= require zeroclipboard

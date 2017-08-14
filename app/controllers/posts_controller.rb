@@ -5,6 +5,8 @@ class PostsController < ApplicationController
     @q = Diy.ransack(params[:q])
     @people = @q.result(distinct: true)
     @tags = ActsAsTaggableOn::Tag.all
+    ids = Impression.where("created_at >= ?", Time.local(1999)).where("created_at <= ?", Time.now).group(:impressionable_id).order('count_all desc').limit(10).count.keys
+    @ranking = Diy.where(:id => ids).order("field(id, #{ids.join(',')})")
 
   end
 
@@ -25,6 +27,9 @@ class PostsController < ApplicationController
     @result = @q.result(distinct: true)
     @video = Diy.all.order("id DESC").page(params[:page]).per(16)
     @topics = Topic.all.order("id DESC")
+    impressionist(@post, nil, :unique => [:session_hash])
+
+    @page_views = @post.impressionist_count
   end
 
   def search
