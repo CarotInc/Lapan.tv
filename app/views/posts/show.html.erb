@@ -20,12 +20,9 @@
     <div class="content-area">
       <div class="pure-g">
       <div class="pure-u-1-8"></div>
-      <div class = "video pure-u-3-8">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:500px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-
-          <%= link_to "", @post.video, {:target => "_brank"} %>
-        </blockquote>
-        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+      <div class = "video-wrap pure-u-3-8">
+        <video src=<%= @post.movie %> autobuffer controls class ="post__video" id="video"></video>
+        <div class="video-btn" id="video-btn"></div>
       </div>
       <div class="pure-u-3-8">
           <div class = "mainText">
@@ -36,17 +33,13 @@
           </div>
           <div class="make_border"></div>
           <div class="u-pt-20 u-pl-40">
-            <a href=<%="https://twitter.com/intent/tweet?url=http://lapan.tv/" + (@post.id).to_s + "&text=" + (@post.title) + "&via=lapan_tv&hashtags=&related=lapan_tv"%> title=""><img src="twitter.png" alt="" class="twitter"></a>
-            <a href=<%="http://www.facebook.com/share.php?u=http://lapan.tv/" + (@post.id).to_s %> title=""><img src="facebook.png" alt="" class="twitter"></a>
+            <a href=<%="https://twitter.com/intent/tweet?url=http://lapan.tv/" + (@post.id).to_s + "&text=" + (@post.title) + "&via=lapan_tv&hashtags=&related=lapan_tv"%> title=""><img src="twitter.png" alt="twitterで共有" class="twitter"></a>
+            <a href=<%="http://www.facebook.com/share.php?u=http://lapan.tv/" + (@post.id).to_s %> title=""><img src="facebook.png" alt="Facebookで共有" class="twitter"></a>
             <a href= <%="http://line.me/R/msg/text/?http://lapan.tv/" + (@post.id).to_s %>>
               <img src="line.png" class="twitter" alt="LINEで送る" />
             </a>
-            <div>
-              <textarea id="fe_text" name="" rows="7" cols="100">コピー領域</textarea>
-              <button class='my_clip_button' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button'>
-              <b>コピーする</b>
-            </button>
-</div>
+            <a id="copyButton" class=""><img src="link.png" alt="リンクをコピー" class="twitter"></a>
+              <div class ="b" id="yourCode"><%= "http://lapan.tv/" + (@post.id).to_s %></div>
           </div>
         </div>
       </div>
@@ -90,7 +83,7 @@
     <p class="menu">メニュー</p>
       <div class="pure-g">
         <div class="pure-u-1-2">
-          <img src=<%= @post.image1 %> class = "image">
+          <img src=<%= @post.image1 %> class = "image" alt = <%= @post.name + "の" + @post.title1 %>>
         </div>
         <div class="pure-u-1-2">
             <div class="title">
@@ -104,25 +97,25 @@
             <%= simple_format(@post.contents1) %>
           </div>
         </div>
+        <% if @post.title2 == nil || @post.title2 == "" then %>
+      <%else%>
       <div class="pure-u-1-2">
-        <img src=<%= @post.image2 %> class ="image">
+        <img src=<%= @post.image2 %> class ="image" alt = <%= @post.name + "の" + @post.title2 %>>
       </div>
       <div class="pure-u-1-2">
         <div class="title">
         <%= simple_format(@post.title2) %>
       </div>
-      <% if @post.title2 == nil || @post.title2 == "" then %>
-      <%else%>
         <div class="make_border"></div>
-      <% end %>
       <div>
         <%= simple_format(@post.contents2) %>
       </div>
       </div>
+      <% end %>
       <% if @post.title3 == nil || @post.title3 == "" then %>
       <%else%>
       <div class="pure-u-1-2">
-          <img src=<%= @post.image3 %> class = "image">
+          <img src=<%= @post.image3 %> class = "image" alt = <%= @post.name + "の" + @post.title3 %> >
         </div>
         <div class="pure-u-1-2">
             <div class="title">
@@ -137,7 +130,7 @@
         <% if @post.title4 == nil || @post.title4 == "" then %>
           <%else%>
       <div class="pure-u-1-2">
-          <img src=<%= @post.image4 %> class = "image">
+          <img src=<%= @post.image4 %> class = "image" alt = <%= @post.name + "の" + @post.title4 %>>
         </div>
         <div class="pure-u-1-2">
             <div class="title">
@@ -152,7 +145,7 @@
         <% if @post.title5 == nil || @post.title5 == "" then %>
           <%else%>
       <div class="pure-u-1-2">
-          <img src=<%= @post.image5 %> class = "image">
+          <img src=<%= @post.image5 %> class = "image" alt = <%= @post.name + "の" + @post.title5 %>>
         </div>
         <div class="pure-u-1-2">
             <div class="title">
@@ -169,7 +162,7 @@
       <div>
       <p class="mainBorder">新着情報</p>
       <div class="make_border_2"></div>
-      <div>
+      <div class="">
         <%= render :partial => "diy" , :collection => @video %>
       </div>
       <div class="more">
@@ -193,8 +186,9 @@
     <div>
       <p class="mainBorder">ピックアップ</p>
       <div class="make_border_2"></div>
-      <p>
-            </p>
+      <div>
+        <%= render :partial => "diy" , :collection => @ranking %>
+      </div>
             <div class="more"><a href="/more/pickup" title="" class="more">>もっと見る</a></div>
     </div>
     <div>

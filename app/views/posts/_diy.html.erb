@@ -1,10 +1,12 @@
-<%= link_to "/#{diy.id}" do %>
-<span class="pure-u-1-2 home__post">
-  <div class = "squareImage">
-    <img src=<%= diy.image %> alt="" class = "home__post__image">
-  </div>
-  <div class = "home__post__title">
-    <%= diy.title  %>
-  </div>
-  </span>
+<div class="pure-u-1-2 post">
+  <%= link_to "/#{diy.id}" do %>
+    <span class="home__post">
+      <div class = "squareImage">
+        <img src=<%= diy.image %> alt=<%= diy.name + "の" + diy.title %> class = "home__post__image">
+      </div>
+      <div class = "home__post__title">
+        <%= diy.title  %>
+      </div>
+    </span>
   <%end%>
+</div>

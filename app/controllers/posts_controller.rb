@@ -30,6 +30,8 @@ class PostsController < ApplicationController
     impressionist(@post, nil, :unique => [:session_hash])
 
     @page_views = @post.impressionist_count
+    ids = Impression.where("created_at >= ?", Time.local(1999)).where("created_at <= ?", Time.now).group(:impressionable_id).order('count_all desc').limit(10).count.keys
+    @ranking = Diy.where(:id => ids).order("field(id, #{ids.join(',')})")
   end
 
   def search
@@ -64,11 +66,13 @@ class PostsController < ApplicationController
   def pickup
     @q = Diy.ransack(params[:q])
     @people = @q.result(distinct: true)
+    ids = Impression.where("created_at >= ?", Time.local(1999)).where("created_at <= ?", Time.now).group(:impressionable_id).order('count_all desc').limit(10).count.keys
+    @ranking = Diy.where(:id => ids).order("field(id, #{ids.join(',')})")
   end
 
    private
   def diy_params
-    params.require(:diy).permit(:title, :image, :text, :video, :tag_list, :title1,:image1,:contents1,:title2,:image2,:contents2,:title3,:image3,:contents3,:title4,:image4,:contents4 ,:prefecture,:area,:address,:name,:station,:call,:access,:open,:close,:url,:price, :seat,:private, :tatami,:smoke,:parking,:reserve,:card,:plus,:category_list)
+    params.require(:diy).permit(:title, :image, :text, :video, :movie , :tag_list, :title1,:image1,:contents1,:title2,:image2,:contents2,:title3,:image3,:contents3,:title4,:image4,:contents4 ,:prefecture,:area,:address,:name,:station,:call,:access,:open,:close,:url,:price, :seat,:private, :tatami,:smoke,:parking,:reserve,:card,:plus,:category_list)
   end
 
     private

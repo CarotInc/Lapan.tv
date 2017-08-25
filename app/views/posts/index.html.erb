@@ -16,7 +16,7 @@
     <div>
       <p class="mainBorder">新着情報</p>
       <div class="home__post__border"></div>
-      <div class=""><%= render :partial => "diy" , :collection => @posts %></div>
+        <div class="pure-g"><%= render :partial => "diy" , :collection => @posts %></div>
       <div>
         <%= paginate(@posts) %>
       </div>
@@ -26,8 +26,17 @@
     <div>
       <p class="subBorder">カテゴリー</p>
       <div class="make_border_2"></div>
-            <div class="">
-              <a href="http://localhost:3000/tag/search?name=かき氷" title=""><img src="かき氷.png" alt=""></a>
+            <div class="pure-g">
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=かき氷" title="かき氷" class="category__image"><img src="かき氷.png" alt="かき氷" class="twitter"><div class="">かき氷</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=パンケーキ" title="パンケーキ" class="category__image"><img src="かき氷.png" alt="パンケーキ" class="twitter"><div>パンケーキ</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=ケーキ" title="ケーキ" class="category__image"><img src="かき氷.png" alt="ケーキ" class="twitter"><div>ケーキ</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=ジェラート" title="ジェラート" class="category__image"><img src="かき氷.png" alt="ジェラート" class="twitter"><div>ジェラート</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=アイス" title="アイス" class="category__image"><img src="かき氷.png" alt="アイス" class="twitter"><div>アイス</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=パン" title="パン" class="category__image"><img src="かき氷.png" alt="ハンバーガー" class="twitter"><div>パン</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=カップケーキ" title="カップケーキ" class="category__image"><img src="かき氷.png" alt="カップケーキ" class="twitter"><div>カップケーキ</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=ドーナツ" title="ドーナツ" class="category__image"><img src="かき氷.png" alt="ドーナツ" class="twitter"><div>ドーナツ</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=パフェ" title="パフェ" class="category__image"><img src="かき氷.png" alt="パフェ" class="twitter"><div>パフェ</div></a></div>
+              <div class="pure-u-1-3 category"><a href="http://localhost:3000/tag/search?name=シュークリーム" title="シュークリーム" class="category__image"><img src="かき氷.png" alt="シュークリーム" class="twitter"><div>シュークリーム</div></a></div>
       </div>
     </div>
     <div>

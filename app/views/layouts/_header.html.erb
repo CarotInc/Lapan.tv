@@ -8,8 +8,9 @@
         </div>
       </div>
       <nav class="form pure-u-1-5">
+        <div ><img src="search.png" alt="" class = "search__image"></div>
         <%= search_form_for(@q, url: '/search/product', method: :get, html: {class: 'allow_submit'}) do |f| %>
-          <%= f.search_field :title_or_station_or_area_or_name_or_prefecture_or_title1_cont ,placeholder: "料理名＿食材でレシピを検索"%>
+          <%= f.search_field :title_or_station_or_area_or_name_or_prefecture_or_title1_cont ,placeholder: "料理名＿食材でレシピを検索" ,:class => "search__form"%>
           <%= f.submit :class => "a"%>
         <% end %>
       </nav>
