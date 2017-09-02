@@ -1,9 +1,9 @@
 
 <div class="main-content">
   <div class="row">
-    <div class="pure-u-1-8">
+    <div class="pure-u-md-1-8">
     </div>
-    <div class="pure-u-2-3">
+    <div class="pure-u-md-2-3">
       <ul>
         <li><a href="/">トップページ</a> &gt;</li>
         <li><% @post.category_list.each do |tag| %>
@@ -15,16 +15,16 @@
         <li><%= @post.title %></li>
       </ul>
     </div>
-    <div class="pure-u-1-8">
+    <div class="pure-u-md-1-8">
     </div>
     <div class="content-area">
       <div class="pure-g">
-      <div class="pure-u-1-8"></div>
-      <div class = "video-wrap pure-u-3-8">
+      <div class="pure-u-md-1-8"></div>
+      <div class = "video-wrap pure-u-md-3-8">
         <video src=<%= @post.movie %> autobuffer controls class ="post__video" id="video"></video>
         <div class="video-btn" id="video-btn"></div>
       </div>
-      <div class="pure-u-3-8">
+      <div class="pure-u-md-3-8">
           <div class = "mainText">
             <h1 class="title u-pl-40" ><%= @post.title %></h1>
           </div>
@@ -46,8 +46,8 @@
     </div><!--/.content-area--><!--/.content-area-->
   </div>
   <div class="pure-g maincontents">
-    <div class="pure-u-1-8"></div>
-    <div class="pure-u-1-2">
+    <div class="pure-u-md-1-8"></div>
+    <div class="pure-u-md-1-2">
         <div>
     <table class="u-ml-40">
     <tr>
@@ -82,10 +82,10 @@
   </div>
     <p class="menu">メニュー</p>
       <div class="pure-g">
-        <div class="pure-u-1-2">
+        <div class="pure-u-md-1-2">
           <img src=<%= @post.image1 %> class = "image" alt = <%= @post.name + "の" + @post.title1 %>>
         </div>
-        <div class="pure-u-1-2">
+        <div class="pure-u-md-1-2">
             <div class="title">
             <%= simple_format(@post.title1) %>
           </div>
@@ -99,10 +99,10 @@
         </div>
         <% if @post.title2 == nil || @post.title2 == "" then %>
       <%else%>
-      <div class="pure-u-1-2">
+      <div class="pure-u-md-1-2">
         <img src=<%= @post.image2 %> class ="image" alt = <%= @post.name + "の" + @post.title2 %>>
       </div>
-      <div class="pure-u-1-2">
+      <div class="pure-u-md-1-2">
         <div class="title">
         <%= simple_format(@post.title2) %>
       </div>
@@ -114,10 +114,10 @@
       <% end %>
       <% if @post.title3 == nil || @post.title3 == "" then %>
       <%else%>
-      <div class="pure-u-1-2">
+      <div class="pure-u-md-1-2">
           <img src=<%= @post.image3 %> class = "image" alt = <%= @post.name + "の" + @post.title3 %> >
         </div>
-        <div class="pure-u-1-2">
+        <div class="pure-u-md-1-2">
             <div class="title">
             <%= simple_format(@post.title3) %>
           </div>
@@ -129,10 +129,10 @@
         <% end %>
         <% if @post.title4 == nil || @post.title4 == "" then %>
           <%else%>
-      <div class="pure-u-1-2">
+      <div class="pure-u-md-1-2">
           <img src=<%= @post.image4 %> class = "image" alt = <%= @post.name + "の" + @post.title4 %>>
         </div>
-        <div class="pure-u-1-2">
+        <div class="pure-u-md-1-2">
             <div class="title">
             <%= simple_format(@post.title4) %>
           </div>
@@ -144,10 +144,10 @@
         <% end %>
         <% if @post.title5 == nil || @post.title5 == "" then %>
           <%else%>
-      <div class="pure-u-1-2">
+      <div class="pure-u-md-1-2">
           <img src=<%= @post.image5 %> class = "image" alt = <%= @post.name + "の" + @post.title5 %>>
         </div>
-        <div class="pure-u-1-2">
+        <div class="pure-u-md-1-2">
             <div class="title">
             <%= simple_format(@post.title5) %>
           </div>
@@ -172,7 +172,7 @@
     </div>
   </div>
 
-  <div class="pure-u-1-4">
+  <div class="pure-u-md-1-4">
     <div>
       <p class="mainBorder">あなたへのオススメ</p>
       <div class="make_border_2"></div>
@@ -206,7 +206,7 @@
       </div>
     </div>
   </div>
-  <div class="pure-u-1-8">
+  <div class="pure-u-md-1-8">
     
   </div>
 
