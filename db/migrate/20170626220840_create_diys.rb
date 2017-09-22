@@ -4,7 +4,6 @@ class CreateDiys < ActiveRecord::Migration[5.0]
       t.string    :title
       t.text      :text
       t.binary    :image
-      t.text      :video
       t.binary    :movie
       t.text      :title1
       t.text      :contents1
@@ -29,9 +28,11 @@ class CreateDiys < ActiveRecord::Migration[5.0]
       t.text      :call
       t.text      :access
       t.text      :open
-      t.text      :url
+      t.text      :close
+      t.text      :tabelog
       t.text      :instagram
-      t.text      :category
+      t.float     :latitude
+      t.float     :longitude
       t.timestamps
     end
   end

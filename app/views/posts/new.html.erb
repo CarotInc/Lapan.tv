@@ -20,9 +20,9 @@
     <%= f.label :tag_list, "タグ（カンマ区切り）" %><br>
     <%= text_field_tag 'diy[tag_list]', @diy.tag_list.join(","), class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :video, "インスタのURL" %><br>
-    <%= f.text_field :video %>
+    <div class="field">
+    <%= f.label :movie, "動画" %><br>
+    <%= f.file_field :movie %>
   </div>
   <div class="field">
     <%= f.label :title1, "メニュー名１" %><br>
@@ -117,16 +117,24 @@
     <%= f.text_area :open %>
   </div>
   <div class="field">
-    <%= f.label :url, "お店のURL" %><br>
-    <%= f.text_field :url %>
+    <%= f.label :close, "定休日" %><br>
+    <%= f.text_area :close %>
+  </div>
+  <div class="field">
+    <%= f.label :tabelog, "お店の食べログ" %><br>
+    <%= f.text_field :tabelog %>
   </div>
   <div class="field">
     <%= f.label :instagram, "instaスポット" %><br>
     <%= f.text_field :instagram %>
   </div>
   <div class="field">
-    <%= f.label :movie, "動画" %><br>
-    <%= f.file_field :movie %>
+    <%= f.label :latitude, "緯度" %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude, "経度" %><br>
+    <%= f.text_field :longitude %>
   </div>
   <div class="actions">
     <%= f.submit %>

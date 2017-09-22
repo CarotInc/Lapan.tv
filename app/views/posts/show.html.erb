@@ -9,9 +9,9 @@
         <li><% @post.category_list.each do |tag| %>
               <span class="label label-primary"><%= link_to tag, { :action => :tag, :name => tag}%></span>
               <% end %> &gt;</li>
-        <li><% @post.tag_list.each do |tag| %>
+        <!-- <li><% @post.tag_list.each do |tag| %>
             <span class="label label-primary"><%= link_to tag, { :action => :tag, :name => tag}%></span>
-            <% end %> &gt;</li>
+            <% end %> &gt;</li> -->
         <li><%= @post.title %></li>
       </ul>
     </div>
@@ -21,25 +21,24 @@
       <div class="pure-g">
       <div class="pure-u-md-1-8"></div>
       <div class = "video-wrap pure-u-md-3-8">
-        <video src=<%= @post.movie %> autobuffer controls class ="post__video" id="video"></video>
+        <video src=<%= @post.movie %> autobuffer preload class ="post__video" id="video"></video>
         <div class="video-btn" id="video-btn"></div>
+        <div id="video-controls">
+        <button type="button" id="play-pause"><i class="icono-play" id = "play"></i></button>
+        <input type="range" class="input-range" id="seek-bar" value="0">
+        <button type="button" id="mute"><i class="icono-volumeMute" id ="volume"></i></button>
+        </div>
       </div>
-      <div class="pure-u-md-3-8">
-          <div class = "mainText">
-            <h1 class="title u-pl-40" ><%= @post.title %></h1>
+      <div class="pure-u-md-3-8 share">
+      <div class = "mainText">
+            <h3 class="u-pl-40 discription" ><%= simple_format(@post.title) %></h3>
           </div>
-          <div class = "subText u-pl-40">
-            <%= simple_format(@post.text) %>
+        
+          <div class = "subText">
+            <h2 class="title"><span class="border__left"></span><%= @post.name %></h2>
           </div>
-          <div class="make_border"></div>
-          <div class="u-pt-20 u-pl-40">
-            <a href=<%="https://twitter.com/intent/tweet?url=http://lapan.tv/" + (@post.id).to_s + "&text=" + (@post.title) + "&via=lapan_tv&hashtags=&related=lapan_tv"%> title=""><img src="twitter.png" alt="twitterで共有" class="twitter"></a>
-            <a href=<%="http://www.facebook.com/share.php?u=http://lapan.tv/" + (@post.id).to_s %> title=""><img src="facebook.png" alt="Facebookで共有" class="twitter"></a>
-            <a href= <%="http://line.me/R/msg/text/?http://lapan.tv/" + (@post.id).to_s %>>
-              <img src="line.png" class="twitter" alt="LINEで送る" />
-            </a>
-            <a id="copyButton" class=""><img src="link.png" alt="リンクをコピー" class="twitter"></a>
-              <div class ="b" id="yourCode"><%= "http://lapan.tv/" + (@post.id).to_s %></div>
+          
+            <div class="post__access"><i class="fa fa-map-marker" aria-hidden="true" id = "blue"></i><span class="access"><%= @post.access %></span></div>
           </div>
         </div>
       </div>
@@ -47,40 +46,78 @@
   </div>
   <div class="pure-g maincontents">
     <div class="pure-u-md-1-8"></div>
-    <div class="pure-u-md-1-2">
-        <div>
-    <table class="u-ml-40">
-    <tr>
-    <th> <span class="dot">・</span>店名</th>
-        <td><%= simple_format(@post.name) %></td>
-    </tr>
-    <tr>
-        <th><span class="dot">・</span>アクセス</th>
-        <td><%= simple_format(@post.access)%></td>
-    </tr>
-    <tr>
-        <th><span class="dot">・</span>営業時間</th>
-        <td><%= simple_format(@post.open) %></td>
-    </tr>
-    <tr>
-        <th><span class="dot">・</span>電話番号</th>
-        <td><%= simple_format(@post.call)%></td>
-    </tr>
-    <tr>
-        <th><span class="dot">・</span>住所</th>
-        <td><%= simple_format(@post.address)%></td>
-    </tr>
-    <tr>
-        <th><span class="dot">・</span>公式HP</th>
-        <td><%= simple_format(@post.url)%></td>
-    </tr>
-    <tr>
-        <th><span class="dot">・</span>instagram スポット</th>
-        <td><%= simple_format(@post.instagram)%></td>
-    </tr>
-</table>
-  </div>
-    <p class="menu">メニュー</p>
+    <div class="pure-u-md-1-2 pure-u-1">
+      <div class="border__bottom store"></span>お店の情報</div>
+        <div class="post__address">
+          <i class="fa fa-map-marker" aria-hidden="true" id = "red"></i><span class="access"><%= @post.address %></span>
+          <div class="map">
+            <style type="text/css">
+    #map { height: 200px;
+   margin-left:auto;    /* 左側マージンを自動的に空ける */
+   margin-right:auto;   /* 右側マージンを自動的に空ける */
+   text-align:left;     /* 中身を左側表示に戻す */
+   width: 100%;}
+  </style>
+  <div id="map"></div>
+  <script type="text/javascript">
+function initMap() {
+
+  var test ={lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: test
+  });
+  var transitLayer = new google.maps.TransitLayer();
+  transitLayer.setMap(map);
+
+  var contentString = '住所：<%= @post.address %>';
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  var marker = new google.maps.Marker({
+    position:test,
+    map: map,
+    title: contentString
+  });
+
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+}
+ </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7nosNb8FHS_-EFksc1G0EUjvaDP-ikaw&callback=initMap"
+  type="text/javascript"></script>
+
+          </div>
+        </div>
+        <div class="post__store__border__bottom">
+          営業時間：<%= (@post.open) %>
+        </div>
+        <div class="post__store__border__bottom">
+          定休日：<%= (@post.close) %>
+        </div>
+        <div class="u-pl-40">
+          <div class="tabelog"><a href= <%=(@post.tabelog)%>>
+              <span class= "line__text" >食べログ</span>
+            </a></div>
+            <div class="instagram"><a href=<%=(@post.instagram)%> >
+              <span class= "line__text" >Instaスポット</span>
+            </a></div>
+          </div>
+          <div>
+            <div class="u-pl-40 u-pt-30">シェアする</div>
+          <div class="u-pl-40">
+            <div class="line"><a href= <%="http://line.me/R/msg/text/?http://lapan.tv/" + (@post.id).to_s %>>
+              <span class= "line__text" >LINE</span>
+            </a></div>
+            <div class="twitter"><a href=<%="https://twitter.com/intent/tweet?url=http://lapan.tv/" + (@post.id).to_s + "&text=" + (@post.title) + "&via=lapan_tv&hashtags=&related=lapan_tv"%> title=""><span class= "line__text" >twitter</span></a></div>
+              <div class="facebook"><a href=<%="http://www.facebook.com/share.php?u=http://lapan.tv/" + (@post.id).to_s %> title=""><span class= "line__text" >Facebook</span></a></div>
+              <div class="link" id="copyButton"><a  class=""><span class= "link__text" >linkをコピー</span></a></div>
+              <div class ="b" id="yourCode"><%= "http://lapan.tv/" + (@post.id).to_s %></div>
+        </div>
+      </div>
+    <!-- <p class="menu">メニュー</p>
       <div class="pure-g">
         <div class="pure-u-md-1-2">
           <img src=<%= @post.image1 %> class = "image" alt = <%= @post.name + "の" + @post.title1 %>>
@@ -157,8 +194,8 @@
           </div>
         </div>
         <% end %>
-    </div>
-    <div>
+    </div> -->
+    <!-- <div>
       <div>
       <p class="mainBorder">新着情報</p>
       <div class="make_border_2"></div>
@@ -169,33 +206,33 @@
         <a href="/posts/newposts" title="" class="more">>もっと見る</a>
       </div>
     </div>
-    </div>
+    </div> -->
   </div>
 
-  <div class="pure-u-md-1-4">
+  <div class="pure-u-md-1-4 pure-u-1">
     <div>
       <p class="mainBorder">あなたへのオススメ</p>
       <div class="make_border_2"></div>
     </div>
-    <p>
+    <div>
       <%= render 'posts/related_posts', posts: @post.find_related_tags %>
-    </p>
+    </div>
     <div class="more">
       <a href="/for/you" title="" class="more">>もっと見る</a>
     </div>
     <div>
-      <p class="mainBorder">ピックアップ</p>
+      <!-- <p class="mainBorder">ピックアップ</p>
       <div class="make_border_2"></div>
       <div>
         <%= render :partial => "diy" , :collection => @ranking %>
       </div>
             <div class="more"><a href="/more/pickup" title="" class="more">>もっと見る</a></div>
-    </div>
+    </div> -->
     <div>
       <p class="mainBorder">広告</p>
       <div class="make_border_2"></div>
     </div>
-    <div>
+    <!-- <div>
       <p class="subBorder">特集</p>
       <div class="make_border_2"></div>
       <div>
@@ -203,8 +240,8 @@
       </div>
       <div class="more">
       <a href="/topic/all" class="more">>もっと見る</a>
-      </div>
-    </div>
+      </div> 
+    </div>-->
   </div>
   <div class="pure-u-md-1-8">
     

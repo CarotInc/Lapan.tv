@@ -1,20 +1,35 @@
+<div class="tag__top__image" style="background: url(<%= "/" + @tag + ".png" %>)center center repeat; background-size:cover;">
+  <img src=<%= "/" + @tag + "_logo.png" %> alt="" class = "tag__image__image">
+</div>
 <% if @post.count == 0  %>
   <div><h2>見つかりませんでした。</h2></div>
 <% else %>
-<div><h2>検索結果</h2>
-<div>
-  <% @post.each do |result| %>
-  <%= link_to "/#{result.id}" do %>
-<span class="pure-u-1-4 child">
-  <div class = "squareImage">
-    <img src=<%= result.image %> alt=<%= result.name + "の" + result.title %> class = "image">
+<div class=""><h2 class="border__bottom osusume">オススメのお店</h2>
+<div class="pure-g">
+  <div class="">
+    <% @post.each do |result| %>
+    <%= link_to "/#{result.id}" do %>
+      <span class="pure-u-1-2 tag__post">
+        <div class = "squareImage">
+          <img src=<%= result.image %> alt=<%= result.name + "の" + result.title %> class = "home__post__image">
+        </div>
+        <div class = "home__post__title">
+          <%= result.title  %>
+        </div>
+        <div class="post__list__station">
+          <i class="fa fa-map-marker" aria-hidden="true" id = "red"></i><%= result.station %>
+        </div>
+      </span>
+    <%end%>
+    <% end %>
   </div>
-  <div class = "titleText">
-    <%= result.title  %>
-  </div>
-  </span>
-  <%end%>
-  <% end %>
 </div>
+</div>
+<div>
+  <h2 class="border__bottom osusume">これもいかが？</h2>
+  <div class="pure-g">
+    <div class="">
+    </div>
   </div>
-  <% end %>
+</div>
+<% end %>

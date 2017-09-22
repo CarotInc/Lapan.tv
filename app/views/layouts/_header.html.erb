@@ -1,15 +1,18 @@
-<header id="header" class="u-pl-40">
+<header id="header" class="">
     <div class="header pure-g">
       <div class="pure-u-md-1-5"></div>
       <div class="pure-u-md-2-5">
-          <div class = "header-logo" id="toggle"><a href="/" class="header-logo"><img src="lapan_logo.png" alt="ラパン" class="header__logo__image"></a><span class="sublogo">女の子のまいにちを<br>おいしくかわいく♡</span></div>
+          <div class = "header-logo" id="toggle"><a href="/" class="header-logo"><img src="/lapan_logo.png" alt="ラパン" class="header__logo__image"></a><span class="sublogo">女の子のまいにちを<br>おいしくかわいく♡</span></div>
       </div>
-      <nav class="form pure-u-md-1-5">
-        <div ><img src="search.png" alt="" class = "search__image"></div>
-        <%= search_form_for(@q, url: '/search/product', method: :get, html: {class: 'allow_submit'}) do |f| %>
-          <%= f.search_field :title_or_station_or_area_or_name_or_prefecture_or_title1_cont ,placeholder: "料理名＿食材でレシピを検索" ,:class => "search__form"%>
-          <%= f.submit :class => "a"%>
-        <% end %>
-      </nav>
+      <i class ="icono-search search__image"></i>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu-list">
+    <li class="pure-menu-item" id="tag"><a href="/tag/search?name=かき氷" title="" class="pure-menu-link" id= "tag__list">かき氷</a></li>
+    <li class="pure-menu-item" id="tag"><a href="/tag/search?name=カップケーキ" title="" class="pure-menu-link" id= "tag__list">カップケーキ</a></li>
+    <li class="pure-menu-item"><a href="/tag/search?name=パンケーキ" title="" class="pure-menu-link" id= "tag__list">パンケーキ</a></li>
+    <li class="pure-menu-item"><a href="/tag/search?name=アイス" title="" class="pure-menu-link">アイス</a></li>
+    <li class="pure-menu-item"><a href="/inquiry" class="pure-menu-link">問い合わせ</a></li>
+  </ul>
     </div>
   </header><!-- /header -->

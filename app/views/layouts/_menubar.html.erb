@@ -1,6 +1,9 @@
 <div class="pure-menu pure-menu-horizontal pure-menu-scrollable responsive">
     <a href="/" class="pure-menu-link pure-menu-heading">Home</a>
     <ul class="pure-menu-list">
-     <%= render :partial => "tag_list" , :collection => @tags %>
+      <li class="pure-menu-item" id="tag"><a href="/tag/search?name=かき氷" title="" class="pure-menu-link" id= "tag__list">かき氷</a></li>
+      <li class="pure-menu-item" id="tag"><a href="/tag/search?name=カップケーキ" title="" class="pure-menu-link" id= "tag__list">カップケーキ</a></li>
+      <li class="pure-menu-item"><a href="/tag/search?name=パンケーキ" title="" class="pure-menu-link" id= "tag__list">パンケーキ</a></li>
+      <li class="pure-menu-item"><a href="/tag/search?name=アイス" title="" class="pure-menu-link">アイス</a></li>
     </ul>
 </div>

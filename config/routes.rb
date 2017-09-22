@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get '/posts/new' => 'posts#new'
   post '/' => 'posts#create'
-  get '/:id' => 'posts#show'
+  get '/:id/lapan/' => 'posts#show'
   get 'search/product' => 'posts#search'
   get 'tag/search' => 'posts#tag'
   get 'tag/:tag' => 'posts#tag'
@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   get '/topic/all' => 'topics#index'
   get 'more/pickup' => 'posts#pickup'
   get '/posts/newposts' => 'posts#newposts'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/inquiry' => 'inquiry#index'
+  get '/inquiry/confirm' => redirect("/inquiry")
+  get '/inquiry/thanks' => redirect("/inquiry")
+  ##### 問い合わせ確認画面
+  post '/inquiry/confirm' => 'inquiry#confirm'
+  ##### 問い合わせ完了画面
+  post '/inquiry/thanks' => 'inquiry#thanks'
 end

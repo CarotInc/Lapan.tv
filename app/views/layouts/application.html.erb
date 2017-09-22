@@ -21,14 +21,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lapan.tv【ラパン】| 女の子の毎日をおいしくかわいく♡</title>
-    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dosis:300,400,500,600,700">
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="../assetsstylesheets/object/_space.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
+    <script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
+    <link rel="stylesheet" href="http://icono-49d6.kxcdn.com/icono.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:title" content="Lapan" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://lapan.tv" />
@@ -59,7 +60,6 @@
     document.execCommand('copy');
     alert('URLをコピーしました。');
   });
-
     //video要素の取得
   var video = document.getElementById('video');
   //videoボタンの取得
@@ -72,10 +72,70 @@
     if(btn_status === 0) {
       video.play();
       btn_status = 1;
+      play.className = "icono-pause"
     }else {
       video.pause();
       btn_status = 0;
+      play.className = "icono-play"
     }
   });
+
+  // Buttons
+  var playButton = document.getElementById("play-pause");
+  var muteButton = document.getElementById("mute");
+  var play = document.getElementById("play");
+
+  // Sliders
+  var seekBar = document.getElementById("seek-bar");
+  var volume = document.getElementById("volume");
+  var tag = document.getElementById("tag");
+  video.muted = true;
+  // Event listener for the play/pause button
+  playButton.addEventListener("click", function() {
+    if(btn_status === 0) {
+      video.play();
+      btn_status = 1;
+      play.className = "icono-pause"
+    }else {
+      video.pause();
+      btn_status = 0;
+      play.className = "icono-play"
+    }
+  });
+
+  // Event listener for the mute button
+muteButton.addEventListener("click", function() {
+  if (video.muted == false) {
+    // Mute the video
+    video.muted = true;
+
+    // Update the button text
+    volume.className = "icono-volumeMute";
+  } else {
+    // Unmute the video
+    video.muted = false;
+
+    // Update the button text
+    volume.className = "icono-volumeHigh";
+  }
+});
+// Event listener for the seek bar
+seekBar.addEventListener("change", function() {
+  // Calculate the new time
+  var time = video.duration * (seekBar.value / 100);
+
+  // Update the video time
+  video.currentTime = time;
+});
+// Update the seek bar as the video plays
+video.addEventListener("timeupdate", function() {
+  // Calculate the slider value
+  var value = (100 / video.duration) * video.currentTime;
+
+  // Update the slider value
+  seekBar.value = value;
+});
+
+
 </script>
 </html>

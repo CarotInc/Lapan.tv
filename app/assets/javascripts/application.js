@@ -10,9 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require underscore
+//= rewuire gmaps/google
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require zeroclipboard
+
 //= require turbolinks
 //= require_tree .

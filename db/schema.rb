@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814144611) do
+ActiveRecord::Schema.define(version: 20170922070153) do
+
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "diys", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.text     "text",       limit: 65535
     t.binary   "image",      limit: 65535
-    t.text     "video",      limit: 65535
     t.binary   "movie",      limit: 65535
     t.text     "title1",     limit: 65535
     t.text     "contents1",  limit: 65535
@@ -41,9 +48,11 @@ ActiveRecord::Schema.define(version: 20170814144611) do
     t.text     "call",       limit: 65535
     t.text     "access",     limit: 65535
     t.text     "open",       limit: 65535
-    t.text     "url",        limit: 65535
+    t.text     "close",      limit: 65535
+    t.text     "tabelog",    limit: 65535
     t.text     "instagram",  limit: 65535
-    t.text     "category",   limit: 65535
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -72,6 +81,11 @@ ActiveRecord::Schema.define(version: 20170814144611) do
     t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
     t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", length: { message: 255 }, using: :btree
     t.index ["user_id"], name: "index_impressions_on_user_id", using: :btree
+  end
+
+  create_table "inquiries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

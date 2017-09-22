@@ -63,6 +63,8 @@ gem 'flowplayer'
 gem 'gretel'
 gem 'impressionist'
 gem 'zeroclipboard-rails'
+gem 'gmaps4rails'
+gem 'geocoder'
 group :production, :staging do
     gem 'unicorn'
 end
