@@ -83,8 +83,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-    config.action_mailer.default_url_options = { host: 'http://52.197.60.178', port: 80 }
-
-  config.web_console.whitelisted_ips = '0.0.0.0/0'
 end
