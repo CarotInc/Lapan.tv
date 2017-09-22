@@ -1,6 +1,6 @@
 class InquiryMailer < ApplicationMailer
   ##### 送信元アドレス
-  default from: "example@example.com"
+  default from: "lapan@example.com"
   ##### 送信先アドレス
   default to: "info@carot.co.jp"
 
