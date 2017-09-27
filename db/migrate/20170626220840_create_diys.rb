@@ -5,6 +5,7 @@ class CreateDiys < ActiveRecord::Migration[5.0]
       t.text      :text
       t.binary    :image
       t.binary    :movie
+      t.binary    :movie2
       t.text      :title1
       t.text      :contents1
       t.binary    :image1

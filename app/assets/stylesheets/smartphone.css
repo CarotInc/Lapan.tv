@@ -1,6 +1,7 @@
 @media screen and (max-width:768px){
   /* header */
   body {
+    font-family: "HiraginoSans-W3";
 }
 
 section {
@@ -422,6 +423,7 @@ li {
 .top__image{
   text-align: center;
   background-image: url('/macaron.png');
+  background-size: cover;
   height: 200px;
 }
 .search__image{
@@ -452,7 +454,7 @@ li {
 .search__form:-ms-input-placeholder { /* IE 10+ */
   color: white;
 }
-.serch__form:-moz-placeholder { /* Firefox 18- */
+.search__form:-moz-placeholder { /* Firefox 18- */
   color: white;
 }
 .category__image{
@@ -957,5 +959,68 @@ li {
   background-color: #f9f9f9;
   padding-bottom: 30px;
   padding-top: 30px;
+}
+
+.form__top{
+  width: 100%;
+  height: 200px;
+  background-image: url(/macaron.png);
+  color: white;
+  background-size: cover;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+.btn{
+  background-color: #fc8181;
+  border:none;
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+.form__feild{
+  text-align: center;
+}
+.form__field{
+  width: 70%;
+  border:1px solid #d4d4d4;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.form__field__message{
+  margin-bottom: 20px;
+  height: 150px;
+}
+.form__field__name{
+
+}
+.form__field::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #d4d4d4;
+}
+.form__field::-moz-placeholder { /* Firefox 19+ */
+  color: #d4d4d4;
+}
+.form__field:-ms-input-placeholder { /* IE 10+ */
+  color: #d4d4d4;
+}
+.form__field:-moz-placeholder { /* Firefox 18- */
+  color: #d4d4d4;
+}
+.new_inquiry{
+  margin-top: 0px;
+}
+.form__text{
+  margin: 0;
+  padding-top: 50px;
+  font-size: 14px;
+  font-weight: 100;
+  padding-left: 10%;
+}
+.form__contact{
+  margin: 0;
+  font-weight: 100;
+  font-size: 35px;
+  padding-left: 10%;
 }
 }

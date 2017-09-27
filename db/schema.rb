@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170922070153) do
     t.text     "text",       limit: 65535
     t.binary   "image",      limit: 65535
     t.binary   "movie",      limit: 65535
+    t.binary   "movie2",     limit: 65535
     t.text     "title1",     limit: 65535
     t.text     "contents1",  limit: 65535
     t.binary   "image1",     limit: 65535

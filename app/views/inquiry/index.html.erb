@@ -1,6 +1,8 @@
-<%= form_for @inquiry, :url => '/inquiry/confirm' do |f| %>
-  <div class="page-header">
-    <h1>お問い合わせ</h1>
+  <div>
+    <%= form_for @inquiry, :url => '/inquiry/confirm' do |f| %>
+  <div class="form__top">
+    <p class="form__text">取材依頼やサービスの感想などをお待ちしております。</p>
+    <h1 class="form__contact">お問い合わせ</h1>
   </div>
  
   <% if @inquiry.errors.any? %>
@@ -14,27 +16,21 @@
     </div>
   <% end %>
  
-  <table class="table">
-    <tr>
-      <th>名前<span class="text-danger"> (必須)</span></th>
-      <td><%= f.text_field :name %></td>
-    </tr>
+  <div class="form__feild">
+    <div>
+      <%= f.text_field :name, :placeholder => "お名前",:class => "form__field form__field__name" %>
+    </div>
+    <div>
+      <%= f.text_field :email,:placeholder => "メールアドレス" ,:class => "form__field"%>
+    </div>
+    <div>
+      <%= f.text_field :phone,:placeholder => "電話番号",:class => "form__field" %>
+    </div>
+    <div>
+      <%= f.text_area :message,:placeholder => "お問い合わせ内容" ,:class => "form__field form__field__message"%>
+    </div>
 
-    <tr>
-      <th>メールアドレス<span class="text-danger"> (必須)</span></th>
-      <td><%= f.text_field :email %></td>
-    </tr>
-
-    <tr>
-      <th>電話番号</th>
-      <td><%= f.text_field :phone %></td>
-    </tr>
-
-    <tr>
-      <th>問い合わせ内容 (必須)</th>
-      <td><%= f.text_area :message %></td>
-    </tr>
-
-  </table>
-  <%= f.submit '確認', class: 'btn btn-primary' %>
+  <%= f.submit '送信', class: 'btn' %>
+  </div>
 <% end %>
+  </div>

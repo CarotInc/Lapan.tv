@@ -87,7 +87,7 @@ class PostsController < ApplicationController
 
    private
   def diy_params
-    params.require(:diy).permit(:title, :image, :text, :movie , :tag_list, :title1,:image1,:contents1,:title2,:image2,:contents2,:title3,:image3,:contents3,:title4,:image4,:contents4 ,:prefecture,:area,:address,:name,:station,:call,:access,:open,:close,:tabelog,:instagram,:latitude,:longitude,:category_list)
+    params.require(:diy).permit(:title, :image, :text, :movie,:movie2 , :tag_list, :title1,:image1,:contents1,:title2,:image2,:contents2,:title3,:image3,:contents3,:title4,:image4,:contents4 ,:prefecture,:area,:address,:name,:station,:call,:access,:open,:close,:tabelog,:instagram,:latitude,:longitude,:category_list)
   end
 
     private
