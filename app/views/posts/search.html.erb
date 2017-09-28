@@ -6,7 +6,7 @@
 <div><h2>検索結果</h2>
 <div>
   <% @result.each do |result| %>
-  <%= link_to "/#{result.id}" do %>
+  <%= link_to "/#{result.id}/lapan" do %>
 <span class="pure-u-1-4 child">
   <div class = "squareImage">
   <img src=<%= result.image %> alt=<%= result.name + "の" + result.title %> class = "image">

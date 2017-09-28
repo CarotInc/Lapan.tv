@@ -8,7 +8,7 @@
 <div class="pure-g">
   <div class="">
     <% @post.each do |result| %>
-    <%= link_to "/#{result.id}" do %>
+    <%= link_to "/#{result.id}/lapan" do %>
       <span class="pure-u-1-2 tag__post">
         <div class = "squareImage">
           <img src=<%= result.image %> alt=<%= result.name + "の" + result.title %> class = "home__post__image">
